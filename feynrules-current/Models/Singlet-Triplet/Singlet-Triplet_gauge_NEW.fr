@@ -1,0 +1,165 @@
+(***************************************************************************************************************)
+(******                       This is the FeynRules mod-file for the Standard model                       ******)
+(****** Based on https://arxiv.org/abs/1812.04628, mS sign is chosen accordingly                      ******)
+(******                                                                                                   ******)
+(******     Authors: A. Filimonova                                                                ******)
+(******                                                                                                   ******)
+(****** Choose whether Feynman gauge is desired.                                                          ******)
+(****** If set to False, unitary gauge is assumed.                                                          ****)
+(****** Feynman gauge is especially useful for CalcHEP/CompHEP where the calculation is 10-100 times faster. ***)
+(****** Feynman gauge is not supported in MadGraph and Sherpa.                                              ****)
+(***************************************************************************************************************)
+
+M$ModelName = "Singlet-Triplet Higgs portal DM";
+
+
+M$Information = {Authors -> {"A.Filimonova"}, 
+             Version -> "1.0",
+             Date -> "10. 05. 2018",
+             Institutions -> {"ITP/Heidelberg"},
+             Emails -> {"filimonova@iitp.uni-heidelberg.de"}
+             };
+
+FeynmanGauge = False;
+
+(********** Index definition *********)
+
+IndexRange[ Index[Generation] ] = Range[3]
+
+IndexRange[ Index[Colour] ] = NoUnfold[Range[3]]
+
+
+IndexFormat[Colour, i]
+
+IndexFormat[Generation, f]
+
+(***** Parameter list ******)
+
+M$Parameters = {
+
+  (* External parameters *)
+
+  mS== {
+        ParameterType -> External,
+        Value -> 10,
+        Description -> "Mass of the light neutral state"},
+
+  mT== {
+        ParameterType -> External,
+        Value -> 200,
+        Description -> "Mass of the heavy neutral state"},
+
+  rr== {
+        ParameterType -> External,
+        Value -> 0.001,
+        InteractionOrder -> {NP, 1},
+        Description -> "effective coupling to Higgs"},
+
+  (* Internal parameters *)
+
+  mST == {
+        ParameterType -> Internal,
+        Value -> (rr*vev^2)/Sqrt[2],
+        TeX -> Subscript[m, ST],
+        Description -> "Mass dim mixing parameter"},
+
+  DD == {
+        ParameterType -> Internal,
+        ComplexParameter -> False,
+        Value ->Sqrt[(mT-mS)^2+4mST^2],
+        TeX -> \[Delta]},
+
+  mll == {
+        ParameterType -> Internal,
+        Value -> 1/2 (mT+mS-DD),
+        TeX -> Subscript[m, l],
+        Description -> "Mass of triplet (in gauge basis)"},
+
+  mTC == {
+        ParameterType -> Internal,
+        Value -> mT + 0.16,
+        TeX -> Subscript[m, C],
+        Description -> "Mass of charged triplet state (includes 1-loop corrections)"},
+
+  mhh == {
+        ParameterType -> Internal,
+        Value -> 1/2 (mT+mS+DD),
+        TeX -> Subscript[m, h],
+        Description -> "Mass of singlet (in gauge basis)"},
+ 
+  ST == {
+        ParameterType -> Internal,
+        BlockName -> NEWMIXING,
+        OrderBlock -> 1,
+        Value -> Sqrt[0.5(1-(-mS+mT)/DD)],
+        ComplexParameter -> False,
+        Description -> "Sin of mixing angle)"},
+
+  CT == {
+        ParameterType -> Internal,
+        BlockName -> NEWMIXING,
+        OrderBlock -> 2,
+        Value -> Sqrt[1-ST^2],
+        ComplexParameter -> False,
+        Description -> "Cos of mixing angle)"},
+
+  S2T == {
+        ParameterType -> Internal,
+        BlockName -> NEWMIXING,
+        OrderBlock -> 3,
+        Value -> 2 ST CT,
+        ComplexParameter -> False,
+        Description -> "Sin of 2 * (mixing angle)"},
+
+  C2T == {
+        ParameterType -> Internal,
+        BlockName -> NEWMIXING,
+        OrderBlock -> 4,
+        Value -> CT^2-ST^2,
+        ComplexParameter -> False,
+        Description -> "Cos of 2 * (mixing angle)"}
+
+};
+
+
+(***** Particle classes list ******)
+
+M$ClassesDescription = {
+
+    F[100] == {
+        ClassName   -> psil,
+        SelfConjugate   -> True,
+        Mass        -> {mll,Internal},
+        Width       -> {Wll,1}, 
+        PropagatorLabel -> "psil",
+        PropagatorType  -> Straight,
+        PropagatorArrow -> False,
+        ParticleName    -> "psil",
+        AntiParticleName -> {"psil~"},
+        FullName        -> "psil"},
+
+    F[101] == {
+        ClassName   -> psih,
+        SelfConjugate   -> True,
+        Mass        -> {mhh,Internal},
+        Width       -> {Whh,1}, 
+        PropagatorLabel -> "psih",
+        PropagatorType  -> Straight,
+        PropagatorArrow -> False,
+        ParticleName    -> "psih",
+        AntiParticleName -> {"psih~"},
+        FullName        -> "psih"},
+
+    F[102] == {
+        ClassName   -> psiC,
+        SelfConjugate   -> False,
+        Mass        -> {mTC,Internal},
+        Width       -> {WC,1},
+        QuantumNumbers  -> {Q -> -1}, 
+        PropagatorLabel -> "psiC",
+        PropagatorType  -> Straight,
+        PropagatorArrow -> True,
+        ParticleName    -> "psimimus",
+        AntiParticleName -> "psiplus",
+        FullName        -> "psiC"}
+};

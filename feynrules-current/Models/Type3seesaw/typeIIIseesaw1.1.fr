@@ -1,0 +1,1246 @@
+(***************************************************************************************************************)
+(******                       This is the FeynRules mod-file for the Standard model                       ******)
+(******                       extended with a fermionic SU(2) triplet which give mass                     ******)
+(******                       to one neutrino via a type III seesaw mechanism                             ******)
+(******                                                                                                   ******)
+(******     Authors: C. Biggio, F. Bonnet                                                                ******)
+(******                                                                                                   ******)
+(****** Choose whether Feynman gauge is desired.                                                          ******)
+(****** If set to False, unitary gauge is assumed.                                                          ****)
+(****** Feynman gauge is especially useful for CalcHEP/CompHEP where the calculation is 10-100 times faster. ***)
+(****** Feynman gauge is not supported in MadGraph and Sherpa.                                              ****)
+(***************************************************************************************************************)
+
+M$ModelName = "typeIIIseesaw1";
+
+
+M$Information = {Authors -> {"C.Biggio", "F. Bonnet"}, 
+             Version -> "1.1",
+             Date -> "16. 03. 2011",
+             Institutions -> {"IFAE/UAB", "INFN Padova"},
+             Emails -> {"biggio@ifae.es", "bonnet@pd.infn.it"},
+             URLs -> "http://feynrules.phys.ucl.ac.be/view/Main/TypeIIIseesaw"};
+
+FeynmanGauge = False;
+
+
+(******* Index definitions ********)
+
+IndexRange[ Index[Generation] ] = Range[3]
+
+IndexRange[ Index[LeptonGeneration] ] = Range[4]
+
+IndexRange[ Index[Colour] ] = NoUnfold[Range[3]]
+
+IndexRange[ Index[Gluon] ] = NoUnfold[Range[8]]
+
+IndexRange[ Index[SU2W] ] = Unfold[Range[3]]
+
+
+IndexStyle[Colour, i]
+
+IndexStyle[Generation, f]
+
+IndexStyle[LeptonGeneration, fl]
+
+IndexStyle[Gluon ,a]
+
+IndexStyle[SU2W ,k]
+
+
+(******* Gauge parameters (for FeynArts) ********)
+
+GaugeXi[ V[1] ] = GaugeXi[A];
+GaugeXi[ V[2] ] = GaugeXi[Z];
+GaugeXi[ V[3] ] = GaugeXi[W];
+GaugeXi[ V[4] ] = GaugeXi[G];
+GaugeXi[ S[1] ] = 1;
+GaugeXi[ S[2] ] = GaugeXi[Z];
+GaugeXi[ S[3] ] = GaugeXi[W];
+GaugeXi[ U[1] ] = GaugeXi[A];
+GaugeXi[ U[2] ] = GaugeXi[Z];
+GaugeXi[ U[31] ] = GaugeXi[W];
+GaugeXi[ U[32] ] = GaugeXi[W];
+GaugeXi[ U[4] ] = GaugeXi[G];
+
+
+(****************  Parameters *************)
+
+M$Parameters = {
+
+  (* External parameters *)
+
+  \[Alpha]EWM1== {
+        ParameterType -> External,
+        BlockName -> SMINPUTS,
+        ParameterName -> aEWM1,
+        InteractionOrder -> {QED, -2},
+        Value -> 127.9,
+        Description -> "Inverse of the electroweak coupling constant"},
+
+  Gf == {
+        ParameterType -> External,
+        BlockName -> SMINPUTS,
+        TeX -> Subscript[G, f],
+        InteractionOrder -> {QED, 2},
+        Value -> 1.16639 * 10^(-5),
+        Description -> "Fermi constant"},
+
+  \[Alpha]S == {
+        ParameterType -> External,
+        BlockName -> SMINPUTS,
+        TeX -> Subscript[\[Alpha], s],
+        ParameterName -> aS,
+        InteractionOrder -> {QCD, 2},
+        Value -> 0.118,
+        Description -> "Strong coupling constant at the Z pole."},
+
+  ymc == {
+        ParameterType -> External,
+        BlockName -> YUKAWA,
+        Value -> 1.42,
+        OrderBlock -> {4},
+        Description -> "Charm Yukawa mass"},
+
+  ymb == {
+        ParameterType -> External,
+        BlockName -> YUKAWA,
+        Value -> 4.7,
+        OrderBlock -> {5},
+        Description -> "Bottom Yukawa mass"},
+
+  ymt == {
+        ParameterType -> External,
+        BlockName -> YUKAWA,
+        Value -> 174.3,
+        OrderBlock -> {6},
+        Description -> "Top Yukawa mass"},
+
+  mv1 == {
+        ParameterType -> External,
+        BlockName -> NEWMASSES,
+        Value -> 0,
+        OrderBlock -> {1},
+        Description -> "nu1 mass"},
+
+  mv2 == {
+        ParameterType -> External,
+        BlockName -> NEWMASSES,
+        Value -> 0,
+        OrderBlock -> {2},
+        Description -> "nu2 mass"},
+
+  mv3 == {
+        ParameterType -> External,
+        BlockName -> NEWMASSES,
+        Value -> 0,
+        OrderBlock -> {3},
+        Description -> "nu3 mass"},
+
+  yme == {
+        ParameterType -> External,
+        BlockName -> YUKAWA,
+        Value -> 0,
+        OrderBlock -> {13},
+        Description -> "Electron Yukawa mass"},
+
+  ymm == {
+        ParameterType -> External,
+        BlockName -> YUKAWA,
+        Value -> 0,
+        OrderBlock -> {14},
+        Description -> "Muon Yukawa mass"},
+
+  ymtau == {
+        ParameterType -> External,
+        BlockName -> YUKAWA,
+        Value -> 1.777,
+        OrderBlock -> {15},
+        Description -> "Tau Yukawa mass"},
+
+   cabi == {
+        TeX -> Subscript[\[Theta], c],
+        ParameterType -> External,
+        BlockName -> CKMBLOCK,
+        Value -> 0.227736,
+        OrderBlock -> {1},
+        Description -> "Cabibbo angle"},
+
+   mtr == {
+        ParameterType -> External,
+        BlockName -> NEWMASSES,
+        Value -> 100.8,
+        OrderBlock -> {4},
+        Description -> "Neutral triplet Majorana mass"},
+
+   mtrm == {
+        ParameterType -> External,
+        BlockName -> NEWMASSES,
+        Value -> 101,
+        OrderBlock -> {5},
+        Description -> "Charged triplet Majorana mass"},
+
+   Ve == {
+        ParameterType -> External,
+        BlockName -> MIXING,
+        Value -> 0,
+        OrderBlock -> {1},
+        Description -> "Electron mixing"},
+
+   Vm == {
+        ParameterType -> External,
+        BlockName -> MIXING,
+        Value -> 0.063,
+        OrderBlock -> {2},
+        Description -> "Muon mixing"},
+
+   Vtt == {
+        ParameterType -> External,
+        BlockName -> MIXING,
+        Value -> 0,
+        OrderBlock -> {3},
+        Description -> "Tau mixing"},
+
+  theta13 == {
+        TeX -> Subscript[\[Theta], 13],
+        ParameterType -> External,
+        BlockName -> CKMBLOCK,
+        Value -> 0.1,
+        OrderBlock -> {2},
+        Description -> "PMNS theta13"},
+
+  theta12 == {
+        TeX -> Subscript[\[Theta], 12],
+        ParameterType -> External,
+        BlockName -> CKMBLOCK,
+        Value -> 0.60,
+        OrderBlock -> {3},
+        Description -> "PMNS solar angle"},
+
+  theta23 == {
+        TeX -> Subscript[\[Theta], 23],
+        ParameterType -> External,
+        BlockName -> CKMBLOCK,
+        Value -> 0.75,
+        OrderBlock -> {4},
+        Description -> "PMNS athmospheric angle"},
+
+
+
+   (* Internal Parameters *)
+
+  \[Alpha]EW == {
+        ParameterType -> Internal,
+        Value -> 1/\[Alpha]EWM1,
+        TeX -> Subscript[\[Alpha], EW],
+        ParameterName -> aEW,
+        InteractionOrder -> {QED, 2},
+        Description -> "Electroweak coupling contant"},
+
+
+  MW == {
+        ParameterType -> Internal,
+        Value -> Sqrt[MZ^2/2+Sqrt[MZ^4/4-Pi/Sqrt[2]*\[Alpha]EW/Gf*MZ^2]],
+        TeX  -> Subscript[M, W],
+        Description -> "W mass"},
+
+  sw2 == {
+        ParameterType -> Internal,
+        Value -> 1-(MW/MZ)^2,
+        Description -> "Squared Sin of the Weinberg angle"},
+
+   ee == {
+        TeX -> e,
+        ParameterType -> Internal,
+        Value -> Sqrt[4 Pi \[Alpha]EW],
+        InteractionOrder -> {QED, 1},
+        Description -> "Electric coupling constant"},
+
+   cw == {
+        TeX -> Subscript[c, w],
+        ParameterType -> Internal,
+        Value -> Sqrt[1 - sw2],
+        Description -> "Cos of the Weinberg angle"},  
+
+   sw == {
+        TeX -> Subscript[s, w],
+        ParameterType -> Internal,
+        Value -> Sqrt[sw2],
+        Description -> "Sin of the Weinberg angle"},  
+
+   gw == {
+        TeX -> Subscript[g, w],
+        ParameterType -> Internal,
+        Value -> ee / sw,
+        InteractionOrder -> {QED, 1},
+        Description -> "Weak coupling constant"},
+
+   g1 == {
+        TeX -> Subscript[g, 1],
+        ParameterType -> Internal,
+        Value -> ee / cw,
+        InteractionOrder -> {QED, 1},
+        Description -> "U(1)Y coupling constant"},
+
+   gs == {
+        TeX -> Subscript[g, s],
+        ParameterType -> Internal,
+        Value -> Sqrt[4 Pi \[Alpha]S],
+        InteractionOrder -> {QCD, 1},
+        ParameterName -> G,
+        Description -> "Strong coupling constant"},
+
+   v == {
+        ParameterType -> Internal,
+        Value -> 2*MW*sw/ee,
+        InteractionOrder -> {QED, -1},
+        Description -> "Higgs VEV"},
+
+   \[Lambda] == {
+        ParameterType -> Internal,
+        Value -> MH^2/(2*v^2),
+        InteractionOrder -> {QED, 2},
+        ParameterName -> lam,
+        Description -> "Higgs quartic coupling"},
+
+   muH == {
+        ParameterType -> Internal,
+        Value -> Sqrt[v^2 \[Lambda]],
+        TeX -> \[Mu],
+        Description -> "Coefficient of the quadratic piece of the Higgs potential"},
+
+   yl == {
+        TeX -> Superscript[y, l],
+        Indices -> {Index[LeptonGeneration]},
+        AllowSummation -> True,
+        ParameterType -> Internal,
+        Value -> {yl[1] -> Sqrt[2] yme / v, yl[2] -> Sqrt[2] ymm / v, yl[3] -> Sqrt[2] ymtau / v, yl[4] -> 0},    
+        ParameterName -> {yl[1] -> ye, yl[2] -> ym, yl[3] -> ytau, yl[4] -> useless},       
+        InteractionOrder -> {QED, 1},
+        ComplexParameter -> False,
+        Description -> "Standard Model lepton Yukawa coupling"},
+
+   yu == {
+        TeX -> Superscript[y, u],
+        Indices -> {Index[Generation]},
+        AllowSummation -> True,
+        ParameterType -> Internal,
+        Value -> {yu[1] -> 0, yu[2] -> Sqrt[2] ymc / v, yu[3] -> Sqrt[2] ymt / v},
+        ParameterName -> {yu[1] -> yu, yu[2] -> yc, yu[3] -> yt},
+        InteractionOrder -> {QED, 1},
+        ComplexParameter -> False,
+        Description -> "U-quark Yukawa coupling"},
+
+   yd == {
+        TeX -> Superscript[y, d],
+        Indices -> {Index[Generation]},
+        AllowSummation -> True,
+        ParameterType -> Internal,
+        Value -> {yd[1] -> 0, yd[2] -> 0, yd[3] -> Sqrt[2] ymb / v},
+        ParameterName -> {yd[1] -> yd, yd[2] -> ys, yd[3] -> yb},
+        InteractionOrder -> {QED, 1},
+        ComplexParameter -> False,
+        Description -> "D-quark Yukawa coupling"},
+
+(* N. B. : only Cabibbo mixing! *)
+  CKM == { 
+       Indices -> {Index[Generation], Index[Generation]},
+       TensorClass -> CKM,
+       Unitary -> True,
+       Value -> {CKM[1,1] -> Cos[cabi],
+                 CKM[1,2] -> Sin[cabi],
+                 CKM[1,3] -> 0,
+                 CKM[2,1] -> -Sin[cabi],
+                 CKM[2,2] -> Cos[cabi],
+                 CKM[2,3] -> 0,
+                 CKM[3,1] -> 0,
+                 CKM[3,2] -> 0,
+                 CKM[3,3] -> 1},
+       Description -> "CKM-Matrix"},
+
+(* N. B. : no phases! *)
+  PMNS == { 
+       Indices -> {Index[Generation], Index[Generation]},
+       TensorClass -> CKM,
+       Unitary -> True,
+       Value -> {PMNS[1,1] -> Cos[theta13] Cos[theta12],
+                 PMNS[1,2] -> Cos[theta13] Sin[theta12],
+                 PMNS[1,3] -> Sin[theta13],
+                 PMNS[2,1] -> -Cos[theta23]*Sin[theta12] - Sin[theta23]*Sin[theta13]*Cos[theta12],
+                 PMNS[2,2] -> Cos[theta23]*Cos[theta12] - Sin[theta23]*Sin[theta13]*Sin[theta12],
+                 PMNS[2,3] -> Sin[theta23]*Cos[theta13],
+                 PMNS[3,1] -> Sin[theta23]*Sin[theta12] - Cos[theta23]*Sin[theta13]*Cos[theta12],
+                 PMNS[3,2] -> -Sin[theta23]*Cos[theta12] - Cos[theta23]*Sin[theta13]*Sin[theta12],
+                 PMNS[3,3] -> Cos[theta23]*Cos[theta13]},
+       Description -> "PMNS-Matrix"},
+
+
+(***********************************************)
+(**********         COUPLINGS         **********)
+(***********************************************)
+
+  gCCL == { 
+       Indices -> {Index[LeptonGeneration], Index[LeptonGeneration]},
+       TensorClass -> CKM,
+       ComplexParameter -> False,
+       Value -> {gCCL[1,1] -> Cos[theta12] Cos[theta13] + 1/2 (Ve^2 Cos[theta12] Cos[theta13] + 
+                              Ve Vtt (-Cos[theta12] Cos[theta23] Sin[theta13] + Sin[theta12] Sin[theta23]) + 
+                              Ve Vm (-Cos[theta23] Sin[theta12] - Cos[theta12] Sin[theta13] Sin[theta23])),
+                 gCCL[1,2] -> Cos[theta13] Sin[theta12] +  1/2 (Ve^2 Cos[theta13] Sin[theta12] + 
+                              Ve Vtt (-Cos[theta23] Sin[theta12] Sin[theta13] - Cos[theta12] Sin[theta23]) + 
+                              Ve Vm (Cos[theta12] Cos[theta23] - Sin[theta12] Sin[theta13] Sin[theta23])),
+                 gCCL[1,3] -> Sin[theta13] + 1/2 (Ve Vtt Cos[theta13] Cos[theta23] + Ve^2 Sin[theta13] +  Ve Vm Cos[theta13] Sin[theta23]),
+                 gCCL[1,4] -> - Ve,
+                 gCCL[2,1] -> -Cos[theta23] Sin[theta12] - Cos[theta12] Sin[theta13] Sin[theta23] + 
+                              1/2 (Ve Vm Cos[theta12] Cos[theta13] + Vm Vtt (-Cos[theta12] Cos[theta23] Sin[theta13] + 
+                              Sin[theta12] Sin[theta23]) + Vm^2 (-Cos[theta23] Sin[theta12] - Cos[theta12] Sin[theta13] Sin[theta23])),
+                 gCCL[2,2] -> Cos[theta12] Cos[theta23] - Sin[theta12] Sin[theta13] Sin[theta23] + 
+                              1/2 (Ve Vm Cos[theta13] Sin[theta12] + Vm Vtt (-Cos[theta23] Sin[theta12] Sin[theta13] - Cos[theta12] Sin[theta23]) + 
+                              Vm^2 (Cos[theta12] Cos[theta23] - Sin[theta12] Sin[theta13] Sin[theta23])),
+                 gCCL[2,3] -> Cos[theta13] Sin[theta23] + 1/2 (Vm Vtt Cos[theta13] Cos[theta23] + Ve Vm Sin[theta13] + Vm^2 Cos[theta13] Sin[theta23]),
+                 gCCL[2,4] -> - Vm,
+                 gCCL[3,1] -> -Cos[theta12] Cos[theta23] Sin[theta13] + Sin[theta12] Sin[theta23] + 1/2 (Ve Vtt Cos[theta12] Cos[theta13] + 
+                              Vtt^2 (-Cos[theta12] Cos[theta23] Sin[theta13] + Sin[theta12] Sin[theta23]) + 
+                              Vm Vtt (-Cos[theta23] Sin[theta12] - Cos[theta12] Sin[theta13] Sin[theta23])),
+                 gCCL[3,2] -> -Cos[theta23] Sin[theta12] Sin[theta13] - Cos[theta12] Sin[theta23] + 1/2 (Ve Vtt Cos[theta13] Sin[theta12] + 
+                              Vtt^2 (-Cos[theta23] Sin[theta12] Sin[theta13] - Cos[theta12] Sin[theta23]) + 
+                              Vm Vtt (Cos[theta12] Cos[theta23] - Sin[theta12] Sin[theta13] Sin[theta23])),
+                 gCCL[3,3] -> Cos[theta13] Cos[theta23] + 1/2 (Vtt^2 Cos[theta13] Cos[theta23] + Ve Vtt Sin[theta13] + Vm Vtt Cos[theta13] Sin[theta23]),
+                 gCCL[3,4] -> - Vtt,
+                 gCCL[4,1] -> 0,
+                 gCCL[4,2] -> 0,
+                 gCCL[4,3] -> 0,
+                 gCCL[4,4] -> Sqrt[2] (1 + 1/2 (-Ve^2 - Vm^2 - Vtt^2))},
+       Description -> "gCCL-Matrix"},
+
+
+
+
+  gCCR == { 
+       Indices -> {Index[LeptonGeneration], Index[LeptonGeneration]},
+       TensorClass -> CKM,
+       ComplexParameter -> False,
+       Value -> {gCCR[1,1] -> 0,
+                 gCCR[1,2] -> 0,
+                 gCCR[1,3] -> 0,
+                 gCCR[1,4] -> -Sqrt[2]*yme/mtr*Ve,
+                 gCCR[2,1] -> 0,
+                 gCCR[2,2] -> 0,
+                 gCCR[2,3] -> 0,
+                 gCCR[2,4] -> -Sqrt[2]*ymm/mtr*Vm,
+                 gCCR[3,1] -> 0,
+                 gCCR[3,2] -> 0,
+                 gCCR[3,3] -> 0,
+                 gCCR[3,4] -> -Sqrt[2]*ymtau/mtr*Vtt,
+                 gCCR[4,1] -> -( Ve Cos[theta12] Cos[theta13] + Vtt (-Cos[theta12] Cos[theta23] Sin[theta13] + 
+                              Sin[theta12] Sin[theta23]) + Vm (-Cos[theta23] Sin[theta12] - Cos[theta12] Sin[theta13] Sin[theta23])),
+                 gCCR[4,2] -> - (Ve Cos[theta13] Sin[theta12] + Vtt (-Cos[theta23] Sin[theta12] Sin[theta13] - 
+                              Cos[theta12] Sin[theta23]) + Vm (Cos[theta12] Cos[theta23] - Sin[theta12] Sin[theta13] Sin[theta23])),
+                 gCCR[4,3] -> - (Vtt Cos[theta13] Cos[theta23] + Ve Sin[theta13] + Vm Cos[theta13] Sin[theta23]),
+                 gCCR[4,4] -> 1 + 1/2 (-Ve^2 - Vm^2 - Vtt^2)},
+       Description -> "gCCR-Matrix"},
+
+
+
+
+
+  gNCL == { 
+       Indices -> {Index[LeptonGeneration], Index[LeptonGeneration]},
+       TensorClass -> CKM,
+       Hermitian -> True,
+       Value -> {gNCL[1,1] -> 1/2-cw^2-Ve^2,
+                 gNCL[1,2] -> Ve*Vm,
+                 gNCL[1,3] -> Ve*Vtt,
+                 gNCL[1,4] -> Ve/Sqrt[2],
+                 gNCL[2,1] -> Ve*Vm,
+                 gNCL[2,2] -> 1/2-cw^2-Vm^2,
+                 gNCL[2,3] -> Vm*Vtt,
+                 gNCL[2,4] -> Vm/Sqrt[2],
+                 gNCL[3,1] -> Ve*Vtt,
+                 gNCL[3,2] -> Vm*Vtt,
+                 gNCL[3,3] -> 1/2-cw^2-Vtt^2,
+                 gNCL[3,4] -> Vtt/Sqrt[2],
+                 gNCL[4,1] -> Ve/Sqrt[2],
+                 gNCL[4,2] -> Vm/Sqrt[2],
+                 gNCL[4,3] -> Vtt/Sqrt[2],
+                 gNCL[4,4] -> Ve^2+Vm^2+Vtt^2-cw^2},
+       Description -> "gNCL-Matrix"},
+
+
+
+  gNCR == { 
+       Indices -> {Index[LeptonGeneration], Index[LeptonGeneration]},
+       TensorClass -> CKM,
+       Hermitian -> True,
+       Value -> {gNCR[1,1] -> 1-cw^2,
+                 gNCR[1,2] -> 0,
+                 gNCR[1,3] -> 0,
+                 gNCR[1,4] -> Sqrt[2]*yme/mtr*Ve,
+                 gNCR[2,1] -> 0,
+                 gNCR[2,2] -> 1-cw^2,
+                 gNCR[2,3] -> 0,
+                 gNCR[2,4] -> Sqrt[2]*ymm/mtr*Vm,
+                 gNCR[3,1] -> 0,
+                 gNCR[3,2] -> 0,
+                 gNCR[3,3] -> 1-cw^2,
+                 gNCR[3,4] -> Sqrt[2]*ymtau/mtr*Vtt,
+                 gNCR[4,1] -> Sqrt[2]*yme/mtr*Ve,
+                 gNCR[4,2] -> Sqrt[2]*ymm/mtr*Vm,
+                 gNCR[4,3] -> Sqrt[2]*ymtau/mtr*Vtt,
+                 gNCR[4,4] -> -cw^2},
+       Description -> "gNCR-Matrix"},
+
+
+
+
+
+
+  gNCnu == { 
+       Indices -> {Index[LeptonGeneration], Index[LeptonGeneration]},
+       TensorClass -> CKM,
+       Hermitian -> True,
+       Value -> {gNCnu[1,1] -> 1 - Cos[theta12] Cos[theta13] (Ve^2 Cos[theta12] Cos[theta13] + 
+                               Ve Vtt (-Cos[theta12] Cos[theta23] Sin[theta13] + Sin[theta12] Sin[theta23]) + 
+                               Ve Vm (-Cos[theta23] Sin[theta12] - 
+                               Cos[theta12] Sin[theta13] Sin[theta23])) - (-Cos[theta23] Sin[theta12] - 
+                               Cos[theta12] Sin[theta13] Sin[theta23]) (Ve Vm Cos[theta12] Cos[theta13] + 
+                               Vm Vtt (-Cos[theta12] Cos[theta23] Sin[theta13] + 
+                               Sin[theta12] Sin[theta23]) + Vm^2 (-Cos[theta23] Sin[theta12] - 
+                               Cos[theta12] Sin[theta13] Sin[theta23])) - (-Cos[theta12] Cos[theta23] Sin[theta13] + 
+                               Sin[theta12] Sin[theta23]) (Ve Vtt Cos[theta12] Cos[theta13] + 
+                               Vtt^2 (-Cos[theta12] Cos[theta23] Sin[theta13] + Sin[theta12] Sin[theta23]) + 
+                               Vm Vtt (-Cos[theta23] Sin[theta12] - Cos[theta12] Sin[theta13] Sin[theta23])),
+                 gNCnu[1,2] -> -Cos[theta13] Sin[theta12] (Ve^2 Cos[theta12] Cos[theta13] + 
+                               Ve Vtt (-Cos[theta12] Cos[theta23] Sin[theta13] + Sin[theta12] Sin[theta23]) + 
+                               Ve Vm (-Cos[theta23] Sin[theta12] - Cos[theta12] Sin[theta13] Sin[theta23])) - (Cos[theta12] Cos[theta23] - 
+                               Sin[theta12] Sin[theta13] Sin[theta23]) (Ve Vm Cos[theta12] Cos[theta13] + 
+                               Vm Vtt (-Cos[theta12] Cos[theta23] Sin[theta13] + Sin[theta12] Sin[theta23]) + 
+                               Vm^2 (-Cos[theta23] Sin[theta12] - 
+                               Cos[theta12] Sin[theta13] Sin[theta23])) - (-Cos[theta23] Sin[theta12] Sin[theta13] - 
+                               Cos[theta12] Sin[theta23]) (Ve Vtt Cos[theta12] Cos[theta13] + 
+                               Vtt^2 (-Cos[theta12] Cos[theta23] Sin[theta13] + Sin[theta12] Sin[theta23]) + 
+                               Vm Vtt (-Cos[theta23] Sin[theta12] -  Cos[theta12] Sin[theta13] Sin[theta23])),
+                 gNCnu[1,3] -> -Sin[theta13] (Ve^2 Cos[theta12] Cos[theta13] + Ve Vtt (-Cos[theta12] Cos[theta23] Sin[theta13] + 
+                               Sin[theta12] Sin[theta23]) + Ve Vm (-Cos[theta23] Sin[theta12] - 
+                               Cos[theta12] Sin[theta13] Sin[theta23])) - Cos[theta13] Sin[theta23] (Ve Vm Cos[theta12] Cos[theta13] + 
+                               Vm Vtt (-Cos[theta12] Cos[theta23] Sin[theta13] + Sin[theta12] Sin[theta23]) + 
+                               Vm^2 (-Cos[theta23] Sin[theta12] - Cos[theta12] Sin[theta13] Sin[theta23])) - 
+                               Cos[theta13] Cos[theta23] (Ve Vtt Cos[theta12] Cos[theta13] + 
+                               Vtt^2 (-Cos[theta12] Cos[theta23] Sin[theta13] + Sin[theta12] Sin[theta23]) + 
+                               Vm Vtt (-Cos[theta23] Sin[theta12] - Cos[theta12] Sin[theta13] Sin[theta23])),
+                 gNCnu[1,4] -> Ve Cos[theta12] Cos[theta13] + Vtt (-Cos[theta12] Cos[theta23] Sin[theta13] + 
+                               Sin[theta12] Sin[theta23]) + Vm (-Cos[theta23] Sin[theta12] - Cos[theta12] Sin[theta13] Sin[theta23]),
+                 gNCnu[2,1] -> -Cos[theta12] Cos[theta13] (Ve^2 Cos[theta13] Sin[theta12] + 
+                               Ve Vtt (-Cos[theta23] Sin[theta12] Sin[theta13] - Cos[theta12] Sin[theta23]) + 
+                               Ve Vm (Cos[theta12] Cos[theta23] - 
+                               Sin[theta12] Sin[theta13] Sin[theta23])) - (-Cos[theta23] Sin[theta12] - 
+                               Cos[theta12] Sin[theta13] Sin[theta23]) (Ve Vm Cos[theta13] Sin[theta12] + 
+                               Vm Vtt (-Cos[theta23] Sin[theta12] Sin[theta13] - Cos[theta12] Sin[theta23]) + 
+                               Vm^2 (Cos[theta12] Cos[theta23] - 
+                               Sin[theta12] Sin[theta13] Sin[theta23])) - (-Cos[theta12] Cos[theta23] Sin[theta13] + 
+                               Sin[theta12] Sin[theta23]) (Ve Vtt Cos[theta13] Sin[theta12] + 
+                               Vtt^2 (-Cos[theta23] Sin[theta12] Sin[theta13] - Cos[theta12] Sin[theta23]) + 
+                               Vm Vtt (Cos[theta12] Cos[theta23] - Sin[theta12] Sin[theta13] Sin[theta23])),
+                 gNCnu[2,2] -> 1 - Cos[theta13] Sin[theta12] (Ve^2 Cos[theta13] Sin[theta12] + 
+                               Ve Vtt (-Cos[theta23] Sin[theta12] Sin[theta13] - Cos[theta12] Sin[theta23]) + 
+                               Ve Vm (Cos[theta12] Cos[theta23] - Sin[theta12] Sin[theta13] Sin[theta23])) - (Cos[theta12] Cos[theta23] - 
+                               Sin[theta12] Sin[theta13] Sin[theta23]) (Ve Vm Cos[theta13] Sin[theta12] + 
+                               Vm Vtt (-Cos[theta23] Sin[theta12] Sin[theta13] - Cos[theta12] Sin[theta23]) + 
+                               Vm^2 (Cos[theta12] Cos[theta23] - 
+                               Sin[theta12] Sin[theta13] Sin[theta23])) - (-Cos[theta23] Sin[theta12] Sin[theta13] - 
+                               Cos[theta12] Sin[theta23]) (Ve Vtt Cos[theta13] Sin[theta12] + 
+                               Vtt^2 (-Cos[theta23] Sin[theta12] Sin[theta13] - Cos[theta12] Sin[theta23]) + 
+                               Vm Vtt (Cos[theta12] Cos[theta23] - Sin[theta12] Sin[theta13] Sin[theta23])),
+                 gNCnu[2,3] -> -Sin[theta13] (Ve^2 Cos[theta13] Sin[theta12] + 
+                               Ve Vtt (-Cos[theta23] Sin[theta12] Sin[theta13] - Cos[theta12] Sin[theta23]) + 
+                               Ve Vm (Cos[theta12] Cos[theta23] - Sin[theta12] Sin[theta13] Sin[theta23])) - 
+                               Cos[theta13] Sin[theta23] (Ve Vm Cos[theta13] Sin[theta12] + 
+                               Vm Vtt (-Cos[theta23] Sin[theta12] Sin[theta13] - Cos[theta12] Sin[theta23]) + 
+                               Vm^2 (Cos[theta12] Cos[theta23] - Sin[theta12] Sin[theta13] Sin[theta23])) - 
+                               Cos[theta13] Cos[theta23] (Ve Vtt Cos[theta13] Sin[theta12] + 
+                               Vtt^2 (-Cos[theta23] Sin[theta12] Sin[theta13] - Cos[theta12] Sin[theta23]) + 
+                               Vm Vtt (Cos[theta12] Cos[theta23] - Sin[theta12] Sin[theta13] Sin[theta23])),
+                 gNCnu[2,4] -> Ve Cos[theta13] Sin[theta12] + Vtt (-Cos[theta23] Sin[theta12] Sin[theta13] - 
+                               Cos[theta12] Sin[theta23]) + Vm (Cos[theta12] Cos[theta23] - Sin[theta12] Sin[theta13] Sin[theta23]),
+                 gNCnu[3,1] -> -Cos[theta12] Cos[theta13] (Ve Vtt Cos[theta13] Cos[theta23] + Ve^2 Sin[theta13] + 
+                               Ve Vm Cos[theta13] Sin[theta23]) - (Vtt^2 Cos[theta13] Cos[theta23] + Ve Vtt Sin[theta13] + 
+                               Vm Vtt Cos[theta13] Sin[theta23]) (-Cos[theta12] Cos[theta23] Sin[theta13] + 
+                               Sin[theta12] Sin[theta23]) - (Vm Vtt Cos[theta13] Cos[theta23] + Ve Vm Sin[theta13] + 
+                               Vm^2 Cos[theta13] Sin[theta23]) (-Cos[theta23] Sin[theta12] - Cos[theta12] Sin[theta13] Sin[theta23]),
+                 gNCnu[3,2] -> -Cos[theta13] Sin[theta12] (Ve Vtt Cos[theta13] Cos[theta23] + Ve^2 Sin[theta13] + 
+                               Ve Vm Cos[theta13] Sin[theta23]) - (-Cos[theta23] Sin[theta12] Sin[theta13] - 
+                               Cos[theta12] Sin[theta23]) (Vtt^2 Cos[theta13] Cos[theta23] + Ve Vtt Sin[theta13] + 
+                               Vm Vtt Cos[theta13] Sin[theta23]) - (Vm Vtt Cos[theta13] Cos[theta23] + Ve Vm Sin[theta13] + 
+                               Vm^2 Cos[theta13] Sin[theta23]) (Cos[theta12] Cos[theta23] -  Sin[theta12] Sin[theta13] Sin[theta23]),
+                 gNCnu[3,3] -> 1 - Sin[theta13] (Ve Vtt Cos[theta13] Cos[theta23] + 
+                               Ve^2 Sin[theta13] + Ve Vm Cos[theta13] Sin[theta23]) - 
+                               Cos[theta13] Sin[theta23] (Vm Vtt Cos[theta13] Cos[theta23] + Ve Vm Sin[theta13] + 
+                               Vm^2 Cos[theta13] Sin[theta23]) - 
+                               Cos[theta13] Cos[theta23] (Vtt^2 Cos[theta13] Cos[theta23] + Ve Vtt Sin[theta13] + 
+                               Vm Vtt Cos[theta13] Sin[theta23]),
+                 gNCnu[3,4] -> Vtt Cos[theta13] Cos[theta23] + Ve Sin[theta13] + Vm Cos[theta13] Sin[theta23],
+                 gNCnu[4,1] -> Ve Cos[theta12] Cos[theta13] + Vtt (-Cos[theta12] Cos[theta23] Sin[theta13] + 
+                               Sin[theta12] Sin[theta23]) + Vm (-Cos[theta23] Sin[theta12] - Cos[theta12] Sin[theta13] Sin[theta23]),
+                 gNCnu[4,2] -> Ve Cos[theta13] Sin[theta12] + Vtt (-Cos[theta23] Sin[theta12] Sin[theta13] - 
+                               Cos[theta12] Sin[theta23]) + Vm (Cos[theta12] Cos[theta23] - Sin[theta12] Sin[theta13] Sin[theta23]),
+                 gNCnu[4,3] -> Vtt Cos[theta13] Cos[theta23] + Ve Sin[theta13] + Vm Cos[theta13] Sin[theta23],
+                 gNCnu[4,4] -> Ve^2 + Vm^2 + Vtt^2},
+       Description -> "gNCnu-Matrix"},
+
+
+
+
+  gHlR == { 
+       Indices -> {Index[LeptonGeneration], Index[LeptonGeneration]},
+       TensorClass -> CKM,
+       ComplexParameter -> False,
+       Value -> {gHlR[1,1] -> yme/v*(1-3*Ve^2),
+                 gHlR[2,1] -> -3*yme/v*Ve*Vm,
+                 gHlR[3,1] -> -3*yme/v*Ve*Vtt,
+                 gHlR[4,1] -> Sqrt[2]*yme/v*Ve,
+                 gHlR[1,2] -> -3*ymm/v*Ve*Vm,
+                 gHlR[2,2] -> ymm/v*(1-3*Vm^2),
+                 gHlR[3,2] -> -3*ymm/v*Vm*Vtt,
+                 gHlR[4,2] -> Sqrt[2]*ymm/v*Vm,
+                 gHlR[1,3] -> -3*ymtau/v*Ve*Vtt,
+                 gHlR[2,3] -> -3*ymtau/v*Vm*Vtt,
+                 gHlR[3,3] -> ymtau/v*(1-3*Vtt^2),
+                 gHlR[4,3] -> Sqrt[2]*ymtau/v*Vtt,
+                 gHlR[1,4] -> Sqrt[2]*mtr/v*Ve*(1-Ve^2-Vm^2-Vtt^2)+Sqrt[2]*yme^2/v/mtr*Ve,
+                 gHlR[2,4] -> Sqrt[2]*mtr/v*Vm*(1-Ve^2-Vm^2-Vtt^2)+Sqrt[2]*ymm^2/v/mtr*Vm,
+                 gHlR[3,4] -> Sqrt[2]*mtr/v*Vtt*(1-Ve^2-Vm^2-Vtt^2)+Sqrt[2]*ymtau^2/v/mtr*Vtt,
+                 gHlR[4,4] -> 2*mtr/v*(Ve^2+Vm^2+Vtt^2)},
+        InteractionOrder -> {QED, 1},
+       Description -> "gHlR-Matrix"},
+
+
+
+
+  getalR == { 
+       Indices -> {Index[LeptonGeneration], Index[LeptonGeneration]},
+       TensorClass -> CKM,
+       ComplexParameter -> False,
+       Value -> {getalR[1,1] -> yme/v*(1+Ve^2),
+                 getalR[2,1] -> yme/v*Ve*Vm,
+                 getalR[3,1] -> yme/v*Ve*Vtt,
+                 getalR[4,1] -> Sqrt[2]*yme/v*Ve,
+                 getalR[1,2] -> ymm/v*Ve*Vm,
+                 getalR[2,2] -> ymm/v*(1+Vm^2),
+                 getalR[3,2] -> ymm/v*Vm*Vtt,
+                 getalR[4,2] -> Sqrt[2]*ymm/v*Vm,
+                 getalR[1,3] -> ymtau/v*Ve*Vtt,
+                 getalR[2,3] -> ymtau/v*Vm*Vtt,
+                 getalR[3,3] -> ymtau/v*(1+Vtt^2),
+                 getalR[4,3] -> Sqrt[2]*ymtau/v*Vtt,
+                 getalR[1,4] -> -Sqrt[2]*mtr/v*Ve*(1-Ve^2-Vm^2-Vtt^2)+Sqrt[2]*yme^2/v/mtr*Ve,
+                 getalR[2,4] -> -Sqrt[2]*mtr/v*Vm*(1-Ve^2-Vm^2-Vtt^2)+Sqrt[2]*ymm^2/v/mtr*Vm,
+                 getalR[3,4] -> -Sqrt[2]*mtr/v*Vtt*(1-Ve^2-Vm^2-Vtt^2)+Sqrt[2]*ymtau^2/v/mtr*Vtt,
+                 getalR[4,4] -> -2*mtr/v*(Ve^2+Vm^2+Vtt^2)},
+        InteractionOrder -> {QED, 1},
+       Description -> "getalR-Matrix"},
+
+
+
+
+  gHnuR == { 
+       Indices -> {Index[LeptonGeneration], Index[LeptonGeneration]},
+       TensorClass -> CKM,
+       ComplexParameter -> False,
+       Value -> {gHnuR[1,1] -> Sqrt[2]/v*mv1,
+                 gHnuR[2,1] -> 0,
+                 gHnuR[3,1] -> 0,
+                 gHnuR[4,1] -> Sqrt[2]/v*mv1*(Ve Cos[theta12] Cos[theta13] + Vtt (-Cos[theta12] Cos[theta23] Sin[theta13] + 
+                               Sin[theta12] Sin[theta23]) + Vm (-Cos[theta23] Sin[theta12] - Cos[theta12] Sin[theta13] Sin[theta23])),
+                 gHnuR[1,2] -> 0,
+                 gHnuR[2,2] -> Sqrt[2]/v*mv2,
+                 gHnuR[3,2] -> 0,
+                 gHnuR[4,2] -> Sqrt[2]/v*mv2*(Ve Cos[theta13] Sin[theta12] + Vtt (-Cos[theta23] Sin[theta12] Sin[theta13] - 
+                               Cos[theta12] Sin[theta23]) + Vm (Cos[theta12] Cos[theta23] - Sin[theta12] Sin[theta13] Sin[theta23])),
+                 gHnuR[1,3] -> 0,
+                 gHnuR[2,3] -> 0,
+                 gHnuR[3,3] -> Sqrt[2]/v*mv3,
+                 gHnuR[4,3] -> Sqrt[2]/v*mv3*(Vtt Cos[theta13] Cos[theta23] + Ve Sin[theta13] + Vm Cos[theta13] Sin[theta23]),
+                 gHnuR[1,4] -> Sqrt[2]*mtr/v*(-(-1 + Ve^2 + Vm^2 + Vtt^2) (Sin[theta12] (-Vm Cos[theta23] + Vtt Sin[theta23]) + 
+                               Cos[theta12] (Ve Cos[theta13] - Sin[theta13] (Vtt Cos[theta23] + Vm Sin[theta23])))),
+                 gHnuR[2,4] -> Sqrt[2]*mtr/v*(-(-1 + Ve^2 + Vm^2 + Vtt^2) (Cos[theta12] (Vm Cos[theta23] - Vtt Sin[theta23]) + 
+                               Sin[theta12] (Ve Cos[theta13] - Sin[theta13] (Vtt Cos[theta23] + Vm Sin[theta23])))),
+                 gHnuR[3,4] -> Sqrt[2]*mtr/v*(-(-1 + Ve^2 + Vm^2 + Vtt^2) (Ve Sin[theta13] + Cos[theta13] (Vtt Cos[theta23] + Vm Sin[theta23]))),
+                 gHnuR[4,4] -> Sqrt[2]*mtr/v*(Ve^2+Vm^2+Vtt^2)},
+        InteractionOrder -> {QED, 1},
+       Description -> "gHnuR-Matrix"},
+
+
+
+
+
+  getanuR == { 
+       Indices -> {Index[LeptonGeneration], Index[LeptonGeneration]},
+       TensorClass -> CKM,
+       ComplexParameter -> False,
+       Value -> {getanuR[1,1] -> -Sqrt[2]/v*mv1,
+                 getanuR[2,1] -> 0,
+                 getanuR[3,1] -> 0,
+                 getanuR[4,1] -> -(Sqrt[2]/v*mv1*(Ve Cos[theta12] Cos[theta13] + Vtt (-Cos[theta12] Cos[theta23] Sin[theta13] + 
+                               Sin[theta12] Sin[theta23]) + Vm (-Cos[theta23] Sin[theta12] - Cos[theta12] Sin[theta13] Sin[theta23]))),
+                 getanuR[1,2] -> 0,
+                 getanuR[2,2] -> -Sqrt[2]/v*mv2,
+                 getanuR[3,2] -> 0,
+                 getanuR[4,2] -> -(Sqrt[2]/v*mv2*(Ve Cos[theta13] Sin[theta12] + Vtt (-Cos[theta23] Sin[theta12] Sin[theta13] - 
+                               Cos[theta12] Sin[theta23]) + Vm (Cos[theta12] Cos[theta23] - Sin[theta12] Sin[theta13] Sin[theta23]))),
+                 getanuR[1,3] -> 0,
+                 getanuR[2,3] -> 0,
+                 getanuR[3,3] -> -Sqrt[2]/v*mv3,
+                 getanuR[4,3] -> -(Sqrt[2]/v*mv3*(Vtt Cos[theta13] Cos[theta23] + Ve Sin[theta13] + Vm Cos[theta13] Sin[theta23])),
+                 getanuR[1,4] -> -(Sqrt[2]*mtr/v*(-(-1 + Ve^2 + Vm^2 + Vtt^2) (Sin[theta12] (-Vm Cos[theta23] + Vtt Sin[theta23]) + 
+                               Cos[theta12] (Ve Cos[theta13] - Sin[theta13] (Vtt Cos[theta23] + Vm Sin[theta23]))))),
+                 getanuR[2,4] -> -(Sqrt[2]*mtr/v*(-(-1 + Ve^2 + Vm^2 + Vtt^2) (Cos[theta12] (Vm Cos[theta23] - Vtt Sin[theta23]) + 
+                               Sin[theta12] (Ve Cos[theta13] - Sin[theta13] (Vtt Cos[theta23] + Vm Sin[theta23]))))),
+                 getanuR[3,4] -> -(Sqrt[2]*mtr/v*(-(-1 + Ve^2 + Vm^2 + Vtt^2) (Ve Sin[theta13] + Cos[theta13] (Vtt Cos[theta23] + Vm Sin[theta23])))),
+                 getanuR[4,4] -> -(Sqrt[2]*mtr/v*(Ve^2+Vm^2+Vtt^2))},
+        InteractionOrder -> {QED, 1},
+       Description -> "getanuR-Matrix"},
+
+
+
+ gPhiL == { 
+       Indices -> {Index[LeptonGeneration], Index[LeptonGeneration]},
+       TensorClass -> CKM,
+       ComplexParameter -> False,
+       Value -> {gPhiL[1,1] -> Sqrt[2]/v*yme*((1 - Ve^2/2) Cos[theta12] Cos[theta13] - 
+                               1/2 Ve Vtt (Sin[theta12] Sin[theta23] - Cos[theta12] Cos[theta23] Sin[theta13]) - 
+                               1/2 Ve Vm (-Cos[theta23] Sin[theta12] - Cos[theta12] Sin[theta13] Sin[theta23])),
+                 gPhiL[1,2] -> Sqrt[2]/v*yme*((1 - Ve^2/2) Cos[theta13] Sin[theta12] -
+                               1/2 Ve Vtt (-Cos[theta23] Sin[theta12] Sin[theta13] - Cos[theta12] Sin[theta23]) -
+                               1/2 Ve Vm (Cos[theta12] Cos[theta23] - Sin[theta12] Sin[theta13] Sin[theta23])),
+                 gPhiL[1,3] -> Sqrt[2]/v*yme*( (1 - Ve^2/2) Sin[theta13] - 
+                               1/2 Ve Vtt Cos[theta13] Cos[theta23] - 1/2 Ve Vm Cos[theta13] Sin[theta23] ),
+                 gPhiL[1,4] -> Sqrt[2]/v*yme Ve,
+                 gPhiL[2,1] -> Sqrt[2]/v*ymm*( (1 - Vm^2/2) (-Cos[theta23] Sin[theta12] - Cos[theta12] Sin[theta13] Sin[theta23]) -
+                               1/2 Ve Vm Cos[theta12] Cos[theta13] -
+                               1/2 Vm Vtt (Sin[theta12] Sin[theta23] - Cos[theta12] Cos[theta23] Sin[theta13])),
+                 gPhiL[2,2] -> Sqrt[2]/v*ymm*( (1 - Vm^2/2) (Cos[theta12] Cos[theta23] - Sin[theta12] Sin[theta13] Sin[theta23]) -
+                               1/2 Ve Vm Cos[theta13] Sin[theta12] - 
+                               1/2 Vm Vtt (-Cos[theta23] Sin[theta12] Sin[theta13] - Cos[theta12] Sin[theta23])),
+                 gPhiL[2,3] -> Sqrt[2]/v*ymm*( (1 - Vm^2/2) Cos[theta13] Sin[theta23] -  
+                               1/2 Vm Vtt Cos[theta13] Cos[theta23] - 1/2 Ve Vm Sin[theta13]),
+                 gPhiL[2,4] -> Sqrt[2]/v* ymm Vm,
+                 gPhiL[3,1] -> Sqrt[2]/v*ymtau*( (1 - Vtt^2/2) (Sin[theta12] Sin[theta23] -  Cos[theta12] Cos[theta23] Sin[theta13]) -
+                               1/2 Ve Vtt Cos[theta12] Cos[theta13] - 
+                               1/2 Vm Vtt (-Cos[theta23] Sin[theta12] - Cos[theta12] Sin[theta13] Sin[theta23])),
+                 gPhiL[3,2] -> Sqrt[2]/v*ymtau*( (1 - Vtt^2/2)  (-Cos[theta23] Sin[theta12] Sin[theta13] - Cos[theta12] Sin[theta23]) - 
+                               1/2 Ve Vtt Cos[theta13] Sin[theta12] - 
+                               1/2 Vm Vtt (Cos[theta12] Cos[theta23] - Sin[theta12] Sin[theta13] Sin[theta23])),
+                 gPhiL[3,3] -> Sqrt[2]/v*ymtau*( (1 - Vtt^2/2) Cos[theta13] Cos[theta23] - 
+                               1/2 Ve Vtt Sin[theta13] - 1/2 Vm Vtt Cos[theta13] Sin[theta23]),
+                 gPhiL[3,4] -> Sqrt[2]/v* ymtau Vtt,
+                 gPhiL[4,1] -> 2/(mtr*v)*(Ve Cos[theta12] Cos[theta13] yme^2 + 
+                               ymtau^2 Vtt (Sin[theta12] Sin[theta23]-Cos[theta12] Cos[theta23] Sin[theta13]) + 
+                               ymm^2 Vm (-Cos[theta23] Sin[theta12]-Cos[theta12] Sin[theta13] Sin[theta23])),
+                 gPhiL[4,2] -> 2/(mtr*v)*(Ve Cos[theta13] Sin[theta12] yme^2 + 
+                               ymtau^2 Vtt (-Cos[theta23] Sin[theta12] Sin[theta13]-Cos[theta12] Sin[theta23]) + 
+                               ymm^2 Vm (Cos[theta12] Cos[theta23]-Sin[theta12] Sin[theta13] Sin[theta23])),
+                 gPhiL[4,3] -> 2/(mtr*v)*(Ve Sin[theta13] yme^2 + ymtau^2 Vtt Cos[theta13] Cos[theta23] + ymm^2 Vm Cos[theta13] Sin[theta23]),
+                 gPhiL[4,4] -> 0       },
+       Description -> "gPhiL-Matrix"},
+
+
+
+gPhiR == { 
+       Indices -> {Index[LeptonGeneration], Index[LeptonGeneration]},
+       TensorClass -> CKM,
+       ComplexParameter -> False,
+       Value -> {gPhiR[1,1] -> -Sqrt[2]/v*(mv1 Cos[theta12] Cos[theta13]),
+                 gPhiR[1,2] -> -Sqrt[2]/v*(mv2 Cos[theta13] Sin[theta12]),
+                 gPhiR[1,3] -> -Sqrt[2]/v*(mv3 Sin[theta13]),
+                 gPhiR[1,4] -> (mtr/v*Sqrt[2])*(-1/2 Ve (3 Ve^2 + 3 Vm^2 + 3 Vtt^2 - 2)) - 
+                               2/v*Sqrt[2]( mv3 Sin[theta13] (Vtt Cos[theta13] Cos[theta23] + Ve Sin[theta13] + Vm Cos[theta13] Sin[theta23]) + 
+                                            mv1 Cos[theta12] Cos[theta13] (Ve Cos[theta12] Cos[theta13] + Vtt (-Cos[theta12] Cos[theta23] Sin[theta13] + 
+                                                Sin[theta12] Sin[theta23]) + Vm (-Cos[theta23] Sin[theta12] - Cos[theta12] Sin[theta13] Sin[theta23])) + 
+                                            mv2 Cos[theta13] Sin[theta12] (Ve Cos[theta13] Sin[theta12] + Vtt (-Cos[theta23] Sin[theta12] Sin[theta13] - 
+                                                Cos[theta12] Sin[theta23]) + Vm (Cos[theta12] Cos[theta23] - Sin[theta12] Sin[theta13] Sin[theta23]))),
+                 gPhiR[2,1] -> -Sqrt[2]/v*(mv1 (-Cos[theta23] Sin[theta12] - Cos[theta12] Sin[theta13] Sin[theta23])),
+                 gPhiR[2,2] -> -Sqrt[2]/v*(mv2 (Cos[theta12] Cos[theta23] - Sin[theta12] Sin[theta13] Sin[theta23])),
+                 gPhiR[2,3] -> -Sqrt[2]/v*(mv3 Cos[theta13] Sin[theta23]),
+                 gPhiR[2,4] -> (mtr/v*Sqrt[2])*(-1/2 Vm (3 Ve^2 + 3 Vm^2 + 3 Vtt^2 - 2)) -
+                               2/v*Sqrt[2] (
+                               mv3 Cos[theta13] Sin[theta23] (Vtt Cos[theta13] Cos[theta23] + Ve Sin[theta13] + Vm Cos[theta13] Sin[theta23]) + 
+                               mv1 (-Cos[theta23] Sin[theta12] - Cos[theta12] Sin[theta13] Sin[theta23]) (Ve Cos[theta12] Cos[theta13] + 
+                                    Vtt (-Cos[theta12] Cos[theta23] Sin[theta13] + Sin[theta12] Sin[theta23]) + 
+                                    Vm (-Cos[theta23] Sin[theta12] - Cos[theta12] Sin[theta13] Sin[theta23])) + 
+                               mv2 (Cos[theta12] Cos[theta23] - Sin[theta12] Sin[theta13] Sin[theta23]) (Ve Cos[theta13] Sin[theta12] + 
+                                    Vtt (-Cos[theta23] Sin[theta12] Sin[theta13] - Cos[theta12] Sin[theta23]) + 
+                                    Vm (Cos[theta12] Cos[theta23] - Sin[theta12] Sin[theta13] Sin[theta23]))),
+                 gPhiR[3,1] -> -Sqrt[2]/v*(mv1 (Sin[theta12] Sin[theta23] - Cos[theta12] Cos[theta23] Sin[theta13])),
+                 gPhiR[3,2] -> -Sqrt[2]/v*(mv2 (-Cos[theta23] Sin[theta12] Sin[theta13] - Cos[theta12] Sin[theta23])),
+                 gPhiR[3,3] -> -Sqrt[2]/v*(mv3 Cos[theta13] Cos[theta23]),
+                 gPhiR[3,4] -> (mtr/v*Sqrt[2])*(-1/2 Vtt (3 Ve^2 + 3 Vm^2 + 3 Vtt^2 - 2)) -
+                               2/v*Sqrt[2] (
+                               mv3 Cos[theta13] Cos[theta23] (Vtt Cos[theta13] Cos[theta23] + Ve Sin[theta13] + Vm Cos[theta13] Sin[theta23]) + 
+                               mv1 (-Cos[theta12] Cos[theta23] Sin[theta13] + Sin[theta12] Sin[theta23]) (Ve Cos[theta12] Cos[theta13] + 
+                                    Vtt (-Cos[theta12] Cos[theta23] Sin[theta13] + Sin[theta12] Sin[theta23]) + 
+                                    Vm (-Cos[theta23] Sin[theta12] - Cos[theta12] Sin[theta13] Sin[theta23])) + 
+                               mv2 (-Cos[theta23] Sin[theta12] Sin[theta13] - Cos[theta12] Sin[theta23]) (Ve Cos[theta13] Sin[theta12] + 
+                                    Vtt (-Cos[theta23] Sin[theta12] Sin[theta13] - Cos[theta12] Sin[theta23]) + 
+                                    Vm (Cos[theta12] Cos[theta23] - Sin[theta12] Sin[theta13] Sin[theta23]))),
+                 gPhiR[4,1] -> mtr/v*( (Ve^2 + Vm^2 + Vtt^2 - 2) (Sin[theta12] (Vtt Sin[theta23] - Vm Cos[theta23]) + 
+                               Cos[theta12] (Ve Cos[theta13] - Sin[theta13] (Vtt Cos[theta23] + Vm Sin[theta23])))),
+                 gPhiR[4,2] -> mtr/v*( (Ve^2 + Vm^2 + Vtt^2 - 2) (Cos[theta12] (Vm Cos[theta23] - Vtt Sin[theta23]) + 
+                               Sin[theta12] (Ve Cos[theta13] - Sin[theta13] (Vtt Cos[theta23] + Vm Sin[theta23])))),
+                 gPhiR[4,3] -> mtr/v*( (Ve^2 + Vm^2 + Vtt^2 - 2) (Ve Sin[theta13] + Cos[theta13] (Vtt Cos[theta23] + Vm Sin[theta23]))),
+                 gPhiR[4,4] -> 0       },
+       Description -> "gPhiR-Matrix"}
+
+
+
+
+}
+
+
+(************** Gauge Groups ******************)
+
+M$GaugeGroups = {
+
+  U1Y == {
+        Abelian -> True,
+        GaugeBoson -> B,
+        Charge -> Y,
+        CouplingConstant -> g1},
+
+  SU2L == {
+        Abelian -> False,
+        GaugeBoson -> Wi,
+        StructureConstant -> Eps,
+        CouplingConstant -> gw},
+
+  SU3C == {
+        Abelian -> False,
+        GaugeBoson -> G,
+        StructureConstant -> f,
+        SymmetricTensor -> dSUN,
+        Representations -> {T, Colour},
+        CouplingConstant -> gs}
+}
+
+(********* Particle Classes **********)
+
+M$ClassesDescription = {
+
+(********** Fermions ************)
+	(* Leptons (neutrino): I_3 = +1/2, Q = 0 *)
+  F[1] == {
+        ClassName -> vl,
+        ClassMembers -> {v1,v2,v3,tr0},
+        FlavorIndex -> LeptonGeneration,
+	SelfConjugate -> True,
+	Indices -> {Index[LeptonGeneration]},
+	Mass -> {Mv, {Mv1, 0}, {Mv2, 0}, {Mv3, 0}, {Mtr0, 100.8}},
+        Width -> {0, 0, 0, {Wtr0, 0.1}},
+	PropagatorLabel -> {"v", "v1", "v2", "v3","tr0"} ,
+	PropagatorType -> S,
+	PropagatorArrow -> Forward,
+        PDG -> {8000012,8000014,8000016,8000018},
+        FullName -> {"nu1", "nu2", "nu3", "Sigma0"} },
+
+	(* Leptons (electron): I_3 = -1/2, Q = -1 *)
+  F[2] == {
+        ClassName -> l,
+        ClassMembers -> {e, m, tt,trm},
+        FlavorIndex -> LeptonGeneration,
+	SelfConjugate -> False,
+	Indices -> {Index[LeptonGeneration]},
+	Mass -> {Ml, {Me, 5.11 * 10^(-4)}, {MM, 0.10566}, {MTA, 1.777}, {Mtrch, 101}},
+        Width -> {0, 0, {Wtau, 0.1}, {Wtrch, 0.1}},
+	QuantumNumbers -> {Q -> -1},
+	PropagatorLabel -> {"l", "e", "m", "tt", "tr-"},
+	PropagatorType -> Straight,
+        ParticleName -> {"e-", "m-", "tt-", "tr-"},
+        AntiParticleName -> {"e+", "m+", "tt+", "tr+"},
+	PropagatorArrow -> Forward,
+        PDG -> {11, 13, 15,8000020},
+        FullName -> {"Electron", "Muon", "Tau", "Sigma-"} },
+
+	(* Quarks (u): I_3 = +1/2, Q = +2/3 *)
+  F[3] == {
+        ClassMembers -> {u, c, t},
+        ClassName -> uq,
+        FlavorIndex -> Generation,
+	SelfConjugate -> False,
+	Indices -> {Index[Generation], Index[Colour]},
+	Mass -> {Mu, {MU, 2.55*10^(-3)}, {MC, 1.42}, {MT, 174.3}},
+        Width -> {0, {WC, 0.1}, {WT, 1.50833649}},
+	QuantumNumbers -> {Q -> 2/3},
+	PropagatorLabel -> {"uq", "u", "c", "t"},
+	PropagatorType -> Straight,
+	PropagatorArrow -> Forward,
+        PDG -> {2, 4, 6}, 
+        FullName -> {"u-quark", "c-quark", "t-quark"}},
+
+	(* Quarks (d): I_3 = -1/2, Q = -1/3 *) 
+  F[4] == {
+        ClassMembers -> {d, s, b},
+        ClassName -> dq,
+        FlavorIndex -> Generation,
+	SelfConjugate -> False,
+	Indices -> {Index[Generation], Index[Colour]},
+	Mass -> {Md, {MD,  5.04*10^(-3)}, {MS, 0.104}, {MB, 4.7}},
+        Width -> {0, 0, {WB, 0.1}},
+	QuantumNumbers -> {Q -> -1/3},
+	PropagatorLabel -> {"dq", "d", "s", "b"},
+	PropagatorType -> Straight, 
+	PropagatorArrow -> Forward,
+        PDG -> {1,3,5},
+        FullName -> {"d-quark", "s-quark", "b-quark"} },
+
+(********** Ghosts **********)
+	U[1] == {
+       ClassName -> ghA,
+       SelfConjugate -> False,
+       Indices -> {},
+       Ghost -> A,
+       Mass -> 0,
+       QuantumNumbers -> {GhostNumber -> 1},
+       PropagatorLabel -> uA,
+       PropagatorType -> GhostDash,
+       PropagatorArrow -> Forward},
+
+	U[2] == {
+       ClassName -> ghZ,
+       SelfConjugate -> False,
+       Indices -> {},
+       Mass -> {MZ, 91.188},
+       Ghost -> Z,
+       QuantumNumbers -> {GhostNumber -> 1},
+       PropagatorLabel -> uZ,
+       PropagatorType -> GhostDash,
+       PropagatorArrow -> Forward},
+
+	U[31] == {
+       ClassName -> ghWp,
+       SelfConjugate -> False,
+       Indices -> {},
+       Mass -> {MW, Internal},
+       Ghost -> W,
+       QuantumNumbers -> {Q-> 1, GhostNumber -> 1},
+       PropagatorLabel -> uWp,
+       PropagatorType -> GhostDash,
+       PropagatorArrow -> Forward},
+
+   U[32] == {
+       ClassName -> ghWm,
+       SelfConjugate -> False,
+       Indices -> {},
+       Mass -> {MW, Internal},
+       Ghost -> Wbar,
+       QuantumNumbers -> {Q-> -1, GhostNumber -> 1},
+       PropagatorLabel -> uWm,
+       PropagatorType -> GhostDash,
+       PropagatorArrow -> Forward},
+
+ 	U[4] == {
+       ClassName -> ghG,
+       SelfConjugate -> False,
+       Indices -> {Index[Gluon]},
+       Ghost -> G,
+       Mass -> 0,
+       QuantumNumbers -> {GhostNumber -> 1},
+       PropagatorLabel -> uG,
+       PropagatorType -> GhostDash,
+       PropagatorArrow -> Forward},
+
+	U[5] == {
+        ClassName -> ghWi,
+        Unphysical -> True,
+        Definitions -> {ghWi[1] -> (ghWp + ghWm)/Sqrt[2],
+                        ghWi[2] -> (ghWm - ghWp)/Sqrt[2]/I,
+                        ghWi[3] -> cw ghZ + sw ghA},
+        SelfConjugate -> False,
+        Ghost -> Wi,
+        Indices -> {Index[SU2W]},
+        FlavorIndex -> SU2W},
+
+	U[6] == {
+        ClassName -> ghB,
+	SelfConjugate -> False,
+        Definitions -> {ghB -> -sw ghZ + cw ghA},
+	Indices -> {},
+        Ghost -> B,
+        Unphysical -> True},
+
+(************ Gauge Bosons ***************)
+	(* Gauge bosons: Q = 0 *)
+  V[1] == {
+        ClassName -> A,
+	SelfConjugate -> True,
+	Indices -> {},
+	Mass -> 0,
+        Width -> 0,
+	PropagatorLabel -> "a",
+	PropagatorType -> W,
+	PropagatorArrow -> None,
+        PDG -> 22,
+        FullName -> "Photon" },
+
+  V[2] == {
+        ClassName -> Z,
+	SelfConjugate -> True, 
+	Indices -> {},
+	Mass -> {MZ, 91.188},
+        Width -> {WZ, 2.44140351},
+	PropagatorLabel -> "Z",
+	PropagatorType -> Sine,
+	PropagatorArrow -> None,
+        PDG -> 23,
+        FullName -> "Z" },
+
+	(* Gauge bosons: Q = -1 *)
+  V[3] == {
+        ClassName -> W,
+	SelfConjugate -> False,
+	Indices -> {},
+	Mass -> {MW, Internal},
+        Width -> {WW, 2.04759951},
+	QuantumNumbers -> {Q -> 1},
+	PropagatorLabel -> "W",
+	PropagatorType -> Sine,
+	PropagatorArrow -> Forward,
+	ParticleName ->"W+",
+	AntiParticleName ->"W-",
+        PDG -> 24,
+        FullName -> "W" },
+
+V[4] == {
+        ClassName -> G,
+	SelfConjugate -> True,
+	Indices -> {Index[Gluon]},
+	Mass -> 0,
+        Width -> 0,
+        PropagatorLabel -> G,
+	PropagatorType -> C,
+	PropagatorArrow -> None,
+        PDG -> 21,
+        FullName -> "G" },
+
+V[5] == {
+        ClassName -> Wi,
+        Unphysical -> True,
+        Definitions -> {Wi[mu_, 1] -> (W[mu] + Wbar[mu])/Sqrt[2],
+                        Wi[mu_, 2] -> (Wbar[mu] - W[mu])/Sqrt[2]/I,
+                        Wi[mu_, 3] -> cw Z[mu] + sw A[mu]},
+        SelfConjugate -> True,
+        Indices -> {Index[SU2W]},
+        FlavorIndex -> SU2W,
+        Mass -> 0,
+        PDG -> {1,2,3}},
+
+V[6] == {
+        ClassName -> B,
+	SelfConjugate -> True,
+        Definitions -> {B[mu_] -> -sw Z[mu] + cw A[mu]},
+	Indices -> {},
+	Mass -> 0,
+        Unphysical -> True},
+
+
+(************ Scalar Fields **********)
+	(* physical Higgs: Q = 0 *) 
+  S[1] == {
+        ClassName -> H,
+	SelfConjugate -> True,
+	Mass -> {MH, 120},
+        Width -> {WH, 0.00575308848},
+	PropagatorLabel -> "H",
+	PropagatorType -> D,
+	PropagatorArrow -> None,
+        PDG -> 25,
+        TeXParticleName -> "\\phi",
+        TeXClassName -> "\\phi",
+        FullName -> "H" },
+
+S[2] == {
+        ClassName -> phi,
+	SelfConjugate -> True,
+	Mass -> {MZ, 91.188},
+        Width -> Wphi,
+	PropagatorLabel -> "Phi",
+	PropagatorType -> D,
+	PropagatorArrow -> None,
+	ParticleName ->"phi0",
+        PDG -> 250,
+        FullName -> "Phi",
+        Goldstone -> Z },
+
+S[3] == {
+        ClassName -> phi2,
+	SelfConjugate -> False,
+	Mass -> {MW, Internal},
+        Width -> Wphi2,
+	PropagatorLabel -> "Phi2",
+	PropagatorType -> D,
+	PropagatorArrow -> None,
+	ParticleName ->"phi+",
+	AntiParticleName ->"phi-",
+        PDG -> 251,
+        FullName -> "Phi2",
+        TeXClassName -> "\\phi^+",
+        TeXParticleName -> "\\phi^+",
+        TeXAntiParticleName -> "\\phi^-",
+        Goldstone -> W,
+        QuantumNumbers -> {Q -> 1}}
+}
+
+
+
+
+(*****************************************************************************************)
+
+(* SM + type III seesaw Lagrangian *)
+
+(******************** Gauge F^2 Lagrangian terms*************************)
+(*Sign convention from Lagrangian in between Eq. (A.9) and Eq. (A.10) of Peskin & Schroeder.*)
+ LGauge = -1/4 (del[Wi[nu, i1], mu] - del[Wi[mu, i1], nu] + gw Eps[i1, i2, i3] Wi[mu, i2] Wi[nu, i3])*
+ 					(del[Wi[nu, i1], mu] - del[Wi[mu, i1], nu] + gw Eps[i1, i4, i5] Wi[mu, i4] Wi[nu, i5]) -
+	
+	1/4 (del[B[nu], mu] - del[B[mu], nu])^2 -
+	
+	1/4 (del[G[nu, a1], mu] - del[G[mu, a1], nu] + gs f[a1, a2, a3] G[mu, a2] G[nu, a3])*
+ 		 (del[G[nu, a1], mu] - del[G[mu, a1], nu] + gs f[a1, a4, a5] G[mu, a4] G[nu, a5]);
+
+
+(********************* Fermion Lagrangian terms*************************)
+(*Sign convention from Lagrangian in between Eq. (A.9) and Eq. (A.10) of Peskin & Schroeder.*)
+ LFermions = Module[{Lkin, LQCD, LEWleft, LEWright},
+
+    Lkin = I uqbar.Ga[mu].del[uq, mu] + 
+    	I dqbar.Ga[mu].del[dq, mu] + 
+    	I lbar.Ga[mu].del[l, mu] + 
+    	I/2 vlbar.Ga[mu].del[vl, mu];
+
+    LQCD = gs (uqbar.Ga[mu].T[a].uq + 
+    	dqbar.Ga[mu].T[a].dq)G[mu, a];
+
+    LBright = 
+       -2ee/cw B[mu]/2 lbar.Ga[mu].ProjP.gNCR.l +                              
+       -2ee*cw B[mu]/2 lbar.Ga[mu].ProjP.l +                                    
+    	4ee/3/cw B[mu]/2 uqbar.Ga[mu].ProjP.uq -       (*Y_uR=4/3*)
+    	2ee/3/cw B[mu]/2 dqbar.Ga[mu].ProjP.dq;        (*Y_dR=-2/3*)
+
+    LBleft = 
+       -ee/cw B[mu]/2 vlbar.Ga[mu].ProjM.gNCnu.vl +                            
+       -2ee/cw B[mu]/2 lbar.Ga[mu].ProjM.gNCL.l  +                             
+       -2ee*cw B[mu]/2 lbar.Ga[mu].ProjM.l  +                                   
+    	ee/3/cw B[mu]/2 uqbar.Ga[mu].ProjM.uq +        (*Y_QL=1/3*)
+    	ee/3/cw B[mu]/2 dqbar.Ga[mu].ProjM.dq ;        (*Y_QL=1/3*)
+	
+    LWleft = Module[{s,r,p,n,m,i},
+        ee/sw/2(
+
+        vlbar[s,n].Ga[mu,s,p].ProjM[p,r].gNCnu[n,m].vl[r,m] Wi[mu, 3] +                
+    	+ 2 lbar[s,n].Ga[mu,s,p].ProjM[p,r].gNCL[n,m].l[r,m] Wi[mu, 3] +                 
+    	- 2*sw^2 lbar[s,n].Ga[mu,s,p].ProjM[p,r].l[r,n] Wi[mu, 3] +                   
+    	+ 2 lbar[s,n].Ga[mu,s,p].ProjP[p,r].gNCR[n,m].l[r,m] Wi[mu, 3] +             
+    	- 2*sw^2 lbar[s,n].Ga[mu,s,p].ProjP[p,r].l[r,n] Wi[mu, 3] +                  
+    	    	    	
+        Sqrt[2] vlbar[s,n].Ga[mu,s,p].ProjM[p,r].gCCL[m,n].l[r,m] W[mu] +                
+    	Sqrt[2] lbar[s,n].Ga[mu,s,p].ProjM[p,r].gCCL[n,m].vl[r,m] Wbar[mu]+              
+   	2 vlbar[s,n].Ga[mu,s,p].ProjP[p,r].gCCR[m,n].l[r,m] W[mu] +                      
+    	2 lbar[s,n].Ga[mu,s,p].ProjP[p,r].gCCR[n,m].vl[r,m] Wbar[mu]+                    
+    	
+    	uqbar[s,n,i].Ga[mu,s,p].ProjM[p,r].uq[r,n,i] Wi[mu, 3] -              (*sigma3 = ( 1   0 )*)
+    	dqbar[s,n,i].Ga[mu,s,p].ProjM[p,r].dq[r,n,i] Wi[mu, 3] +              (*         ( 0  -1 )*)
+    	
+    	Sqrt[2] uqbar[s,n,i].Ga[mu,s,p].ProjM[p,r].CKM[n,m].dq[r,m,i] W[mu] +
+    	Sqrt[2] dqbar[s,n,i].Ga[mu,s,p].ProjM[p,r].Conjugate[CKM[m,n]].uq[r,m,i] Wbar[mu] 
+    	)];
+
+    Lkin + LQCD + LBright + LBleft + LWleft];
+
+(******************** Higgs Lagrangian terms****************************)
+ Phi := If[FeynmanGauge, {-I phi2, (v + H + I phi)/Sqrt[2]}, {0, (v + H)/Sqrt[2]}];
+ Phibar := If[FeynmanGauge, {I phi2bar, (v + H - I phi)/Sqrt[2]} ,{0, (v + H)/Sqrt[2]}];
+ 
+
+    
+ LHiggs := Block[{PMvec, WVec, Dc, Dcbar, Vphi},
+    
+    PMvec = Table[PauliSigma[i], {i, 3}];   
+    Wvec[mu_] := {Wi[mu, 1], Wi[mu, 2], Wi[mu, 3]};
+
+	(*Y_phi=1*)
+    Dc[f_, mu_] := I del[f, mu] + ee/cw B[mu]/2 f + ee/sw/2 (Wvec[mu].PMvec).f;
+    Dcbar[f_, mu_] := -I del[f, mu] + ee/cw B[mu]/2 f + ee/sw/2 f.(Wvec[mu].PMvec);
+
+    Vphi[Phi_, Phibar_] := -muH^2 Phibar.Phi + \[Lambda] (Phibar.Phi)^2;
+
+    (Dcbar[Phibar, mu]).Dc[Phi, mu] - Vphi[Phi, Phibar]];
+    
+
+(*************** Yukawa Lagrangian***********************)
+LYuk := If[FeynmanGauge,
+
+      Module[{s,r,n,m,i},                                                   	          -
+	      yd[n] CKM[n,m]     uqbar[s,n,i].ProjP[s,r].dq[r,m,i] (-I phi2)              -
+	      yd[n]              dqbar[s,n,i].ProjP[s,r].dq[r,n,i] (v+H +I phi)/Sqrt[2]   -
+	 
+	      yu[n]              uqbar[s,n,i].ProjP[s,r].uq[r,n,i] (v+H -I phi)/Sqrt[2]   + (*This sign from eps matrix*)	
+	      yu[n] Conjugate[CKM[m,n]] dqbar[s,n,i].ProjP[s,r].uq[r,m,i] ( I phi2bar)    -
+	
+	      yl[n]               lbar[s,n].ProjP[s,r].l[r,n]           (v)/Sqrt[2]       -       
+	      gHlR[n,m]              lbar[s,n].ProjP[s,r].l[r,m]        (H)               -        
+	      gHnuR[n,m]             vlbar[s,n].ProjP[s,r].vl[r,m]      (H)/Sqrt[2]       -
+	      getalR[n,m]              lbar[s,n].ProjP[s,r].l[r,m]      (I phi)           -        
+	      getanuR[n,m]             vlbar[s,n].ProjP[s,r].vl[r,m]    (I phi)/Sqrt[2]   -
+	      gPhiR[n,m]              lbar[s,n].ProjP[s,r].vl[r,m]      (I phi2bar)       -  (* Different convention in phi2 definition compared to paper *)  
+	      gPhiL[n,m]              lbar[s,n].ProjM[s,r].vl[r,m]      (I phi2bar)          (* Different convention in phi2 definition compared to paper *)  
+           ],
+           
+	   Module[{s,r,n,m,i},                                                    -
+	      yd[n]              dqbar[s,n,i].ProjP[s,r].dq[r,n,i] (v+H)/Sqrt[2]  -
+	      yu[n]              uqbar[s,n,i].ProjP[s,r].uq[r,n,i] (v+H)/Sqrt[2]  -
+	      yl[n]               lbar[s,n].ProjP[s,r].l[r,n]      (v)/Sqrt[2]    -        
+	    gHlR[n,m]              lbar[s,n].ProjP[s,r].l[r,m]      (H)        -        
+	    gHnuR[n,m]             vlbar[s,n].ProjP[s,r].vl[r,m]      (H)/Sqrt[2]          
+           ]
+         ];
+
+LYukawa := LYuk + HC[LYuk];
+
+(****************** Majorana Masses *********************)
+
+LMasses= - mtr/2 tr0bar.tr0 - mtrm trmbar.trm                                               
+
+
+(**************Ghost terms**************************)
+(* Now we need the ghost terms which are of the form:             *)
+(* - g * antighost * d_BRST G                                     *)
+(* where d_BRST G is BRST transform of the gauge fixing function. *)
+
+LGhost := If[FeynmanGauge, 
+		Block[{dBRSTG,LGhostG,dBRSTWi,LGhostWi,dBRSTB,LGhostB},
+		
+	(***********First the pure gauge piece.**********************) 	
+	dBRSTG[mu_,a_] := 1/gs Module[{a2, a3}, del[ghG[a], mu] + gs f[a,a2,a3] G[mu,a2] ghG[a3]];
+		LGhostG := - gs ghGbar[a].del[dBRSTG[mu,a],mu];
+ 	
+	dBRSTWi[mu_,i_] := sw/ee Module[{i2, i3}, del[ghWi[i], mu] + ee/sw Eps[i,i2,i3] Wi[mu,i2] ghWi[i3] ];
+		LGhostWi := - ee/sw ghWibar[a].del[dBRSTWi[mu,a],mu];	
+ 	
+	dBRSTB[mu_] := cw/ee del[ghB, mu];
+		LGhostB := - ee/cw ghBbar.del[dBRSTB[mu],mu];
+	
+	(***********Next the piece from the scalar field.************)
+	LGhostphi := -   ee/(2*sw*cw) MW ( - I phi2    ( (cw^2-sw^2)ghWpbar.ghZ + 2sw*cw ghWpbar.ghA )  +
+			I phi2bar ( (cw^2-sw^2)ghWmbar.ghZ + 2sw*cw ghWmbar.ghA )    ) -
+			ee/(2*sw) MW ( ( (v+H) + I phi) ghWpbar.ghWp + ( (v+H) - I phi) ghWmbar.ghWm   ) -
+			I ee/(2*sw) MZ ( - phi2bar ghZbar.ghWp + phi2 ghZbar.ghWm ) -
+			ee/(2*sw*cw) MZ (v+H) ghZbar.ghZ ;
+		 	
+		 	
+	(***********Now add the pieces together.********************)
+	LGhostG + LGhostWi + LGhostB + LGhostphi]
+
+, 0];
+		
+(*********Total Lagrangian*******)	 	
+LTypeIII := LGauge + LHiggs + LFermions + LYukawa  + LGhost + LMasses
+		
+		
