@@ -1,0 +1,4 @@
+import model scalar
+generate p p > Z > psiplus psimimus , psiplus > psil l+ vl , (psimimus > psil l- vl~ )
+output pp-Z-leptons_scalar
+exit
