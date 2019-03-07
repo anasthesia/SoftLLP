@@ -1,0 +1,33 @@
+# Uncomment the line below to skip this analysis altogether
+# @MG5aMC skip_analysis
+
+@MG5aMC stdout_lvl=INFO
+
+@MG5aMC inputs = *.lhe
+@MG5aMC analysis_name = test_analysis_manual
+
+# Multiparticle definition
+define vl = 12 14 16
+define vl~ = -16 -14 -12
+define muon = mu+ mu-
+define electron = e+ e-
+define invisible = ve ve~ vm vm~ vt vt~ vl vl~ psil psih
+
+# Histogram drawer (options: matplotlib or root)
+set main.graphic_render = root
+
+
+plot PT(muon[1]) 20 0 50 [logY]
+plot PT(muon[2]) 20 0 50 [logY]
+
+plot PT(electron[1]) 20 0 50 [logY]
+plot PT(electron[2]) 20 0 50 [logY]
+
+plot ETA(muon[1]) 40 -10 10 [logY]
+plot ETA(muon[2]) 40 -10 10 [logY]
+
+plot ETA(electron[1]) 40 -10 10 [logY]
+plot ETA(electron[2]) 40 -10 10 [logY]
+
+plot DELTAR(muon[1],muon[2]) 40 0 10 [logY ]
+plot DELTAR(electron[1],electron[2]) 40 0 10 [logY ]

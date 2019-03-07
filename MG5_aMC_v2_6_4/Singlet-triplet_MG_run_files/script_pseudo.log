@@ -1,0 +1,1672 @@
+nohup: ignoriere Eingabe
+************************************************************
+*                                                          *
+*                      W E L C O M E to                    *
+*             M A D G R A P H 5 _ a M C @ N L O            *
+*                      M A D E V E N T                     *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 2.6.4                 20xx-xx-xx         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*                                                          *
+************************************************************
+INFO: load configuration from /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/me5_configuration.txt  
+INFO: load configuration from /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/input/mg5_configuration.txt  
+INFO: load configuration from /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/me5_configuration.txt  
+Using default text editor "vi". Set another one in ./input/mg5_configuration.txt
+Using default eps viewer "evince". Set another one in ./input/mg5_configuration.txt
+Using default web browser "firefox". Set another one in ./input/mg5_configuration.txt
+generate_events -f rr2.00e-05_mS2.06e+02_mT2.26e+02
+stty: Standardeingabe: Unpassender IOCTL (I/O-Control) für das Gerät
+INFO: Computing the width set on auto in the param_card.dat 
+INFO: Change particles name to pass to MG5 convention 
+************************************************************
+*                                                          *
+*                     W E L C O M E to                     *
+*              M A D G R A P H 5 _ a M C @ N L O           *
+*                                                          *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 2.6.4                 2018-11-09         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+*                            and                           *
+*            http://amcatnlo.web.cern.ch/amcatnlo/         *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*           Type 'tutorial' to learn how MG5 works         *
+*    Type 'tutorial aMCatNLO' to learn how aMC@NLO works   *
+*    Type 'tutorial MadLoop' to learn how MadLoop works    *
+*                                                          *
+************************************************************
+load MG5 configuration from ../input/mg5_configuration.txt 
+fastjet-config does not seem to correspond to a valid fastjet-config executable (v3+). We will use fjcore instead.
+ Please set the 'fastjet'variable to the full (absolute) /PATH/TO/fastjet-config (including fastjet-config).
+ MG5_aMC> set fastjet /PATH/TO/fastjet-config
+
+lhapdf-config does not seem to correspond to a valid lhapdf-config executable. 
+Please set the 'lhapdf' variable to the (absolute) /PATH/TO/lhapdf-config (including lhapdf-config).
+Note that you can still compile and run aMC@NLO with the built-in PDFs
+ MG5_aMC> set lhapdf /PATH/TO/lhapdf-config
+
+Using default text editor "vi". Set another one in ./input/mg5_configuration.txt
+Using default eps viewer "evince". Set another one in ./input/mg5_configuration.txt
+Using default web browser "firefox". Set another one in ./input/mg5_configuration.txt
+set automatic_html_opening False --no_save
+compute_widths 9000005 9000006 9000007 23 24 25 --precision_channel=0.01 --body_decay=4.0025 --path=/pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat --output=/pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat
+[1;34mPlease note that the automatic computation of the width is
+    only valid in narrow-width approximation and at tree-level.[0m
+INFO: Get two body decay from FeynRules formula 
+Results written to /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat
+INFO: get decay diagram for psil 
+Vertexlist of this model has not been searched.Automatically run the model.find_vertexlist()
+Found 4 stable particles
+INFO: get decay diagram for psih 
+INFO: get decay diagram for psimimus 
+INFO: get decay diagram for z 
+INFO: get decay diagram for w+ 
+INFO: get decay diagram for h 
+Pass to numerical integration for computing the widths:
+INFO: More info in temporary files:
+    /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/tmpbdFm1n/temp_decay/index.html 
+Results written to /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat
+[1;31mERROR: The width of particle 9000006 is too small for an s-channel resonance (1.827731e-13). If you have this particle in an s-channel, this is likely to create numerical instabilities . [0m
+[1;31mERROR: The width of particle 9000006 is too small for an s-channel resonance (1.827731e-13). If you have this particle in an s-channel, this is likely to create numerical instabilities . [0m
+Generating 10000 events with run name rr2.00e-05_mS2.06e+02_mT2.26e+02
+survey  rr2.00e-05_mS2.06e+02_mT2.26e+02 
+INFO: compile directory 
+[1;31mERROR: The width of particle 9000006 is too small for an s-channel resonance (1.827731e-13). If you have this particle in an s-channel, this is likely to create numerical instabilities . [0m
+compile Source Directory
+Using random number seed offset = 24
+INFO: Running Survey 
+Creating Jobs
+Working on SubProcesses
+INFO:     P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:  Idle: 0,  Running: 2,  Completed: 30 [ current time: 09h30 ] 
+INFO:  Idle: 0,  Running: 1,  Completed: 31 [  0.32s  ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 32 [  1.1s  ] 
+INFO: End survey 
+refine 10000
+Creating Jobs
+INFO: Refine results to 10000 
+INFO: Generating 10000.0 unweigthed events. 
+INFO: Effective Luminosity 235343.724412 pb^-1 
+INFO: need to improve 15 channels 
+Current estimate of cross-section: 0.05098925 +- 0.00156058741884
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+INFO:  Idle: 3,  Running: 20,  Completed: 0 [ current time: 09h30 ] 
+INFO:  Idle: 2,  Running: 20,  Completed: 1 [  1.7s  ] 
+INFO:  Idle: 0,  Running: 16,  Completed: 7 [  4.8s  ] 
+INFO:  Idle: 0,  Running: 8,  Completed: 15 [  8.6s  ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 23 [  11.5s  ] 
+INFO: Combining runs 
+INFO: finish refine 
+refine 10000
+Creating Jobs
+INFO: Refine results to 10000 
+INFO: Generating 10000.0 unweigthed events. 
+INFO: Effective Luminosity 237264.670519 pb^-1 
+INFO: need to improve 0 channels 
+Current estimate of cross-section: 0.05057643 +- 0.000180783896185
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+INFO:  Idle: 0,  Running: 0,  Completed: 0 [ current time: 09h31 ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 0 [ current time: 09h31 ] 
+INFO: Combining runs 
+INFO: finish refine 
+INFO: Combining Events 
+  === Results Summary for run: rr2.00e-05_mS2.06e+02_mT2.26e+02 tag: tag_1 ===
+
+     Cross-section :   0.05058 +- 0.0001808 pb
+     Nb of events :  10000
+ 
+store_events
+INFO: Storing parton level results 
+INFO: End Parton 
+reweight -from_cards
+decay_events -from_cards
+INFO: [92mRunning MadAnalysis5 [arXiv:1206.1599][0m 
+INFO: Parton input file considered: 
+INFO:   --> /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Events/rr2.00e-05_mS2.06e+02_mT2.26e+02/unweighted_events.lhe.gz 
+[1;32mINFO: MadAnalysis5 now running the 'test_analysis_manual' analysis... [0m
+INFO: Follow Madanalysis5 run with the following command in a separate terminal: 
+INFO:   tail -f /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Events/rr2.00e-05_mS2.06e+02_mT2.26e+02/tag_1_MA5_test_analysis_manual.log 
+INFO: MadAnalysis5 successfully completed the analysis 'test_analysis_manual'. Reported results are placed in: 
+INFO:   --> /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Events/rr2.00e-05_mS2.06e+02_mT2.26e+02/tag_1_MA5_parton_analysis_test_analysis_manual.pdf 
+INFO: Finished MA5 analyses. 
+INFO: storing files of previous run 
+INFO: Done 
+quit
+INFO:  
+************************************************************
+*                                                          *
+*                      W E L C O M E to                    *
+*             M A D G R A P H 5 _ a M C @ N L O            *
+*                      M A D E V E N T                     *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 2.6.4                 20xx-xx-xx         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*                                                          *
+************************************************************
+INFO: load configuration from /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/me5_configuration.txt  
+INFO: load configuration from /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/input/mg5_configuration.txt  
+INFO: load configuration from /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/me5_configuration.txt  
+Using default text editor "vi". Set another one in ./input/mg5_configuration.txt
+Using default eps viewer "evince". Set another one in ./input/mg5_configuration.txt
+Using default web browser "firefox". Set another one in ./input/mg5_configuration.txt
+generate_events -f rr2.00e-05_mS5.00e+02_mT5.28e+02
+stty: Standardeingabe: Unpassender IOCTL (I/O-Control) für das Gerät
+INFO: Computing the width set on auto in the param_card.dat 
+INFO: Change particles name to pass to MG5 convention 
+************************************************************
+*                                                          *
+*                     W E L C O M E to                     *
+*              M A D G R A P H 5 _ a M C @ N L O           *
+*                                                          *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 2.6.4                 2018-11-09         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+*                            and                           *
+*            http://amcatnlo.web.cern.ch/amcatnlo/         *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*           Type 'tutorial' to learn how MG5 works         *
+*    Type 'tutorial aMCatNLO' to learn how aMC@NLO works   *
+*    Type 'tutorial MadLoop' to learn how MadLoop works    *
+*                                                          *
+************************************************************
+load MG5 configuration from ../input/mg5_configuration.txt 
+fastjet-config does not seem to correspond to a valid fastjet-config executable (v3+). We will use fjcore instead.
+ Please set the 'fastjet'variable to the full (absolute) /PATH/TO/fastjet-config (including fastjet-config).
+ MG5_aMC> set fastjet /PATH/TO/fastjet-config
+
+lhapdf-config does not seem to correspond to a valid lhapdf-config executable. 
+Please set the 'lhapdf' variable to the (absolute) /PATH/TO/lhapdf-config (including lhapdf-config).
+Note that you can still compile and run aMC@NLO with the built-in PDFs
+ MG5_aMC> set lhapdf /PATH/TO/lhapdf-config
+
+Using default text editor "vi". Set another one in ./input/mg5_configuration.txt
+Using default eps viewer "evince". Set another one in ./input/mg5_configuration.txt
+Using default web browser "firefox". Set another one in ./input/mg5_configuration.txt
+set automatic_html_opening False --no_save
+compute_widths 9000005 9000006 9000007 23 24 25 --precision_channel=0.01 --body_decay=4.0025 --path=/pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat --output=/pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat
+[1;34mPlease note that the automatic computation of the width is
+    only valid in narrow-width approximation and at tree-level.[0m
+INFO: Get two body decay from FeynRules formula 
+Results written to /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat
+INFO: get decay diagram for psil 
+Vertexlist of this model has not been searched.Automatically run the model.find_vertexlist()
+Found 4 stable particles
+INFO: get decay diagram for psih 
+INFO: get decay diagram for psimimus 
+INFO: get decay diagram for z 
+INFO: get decay diagram for w+ 
+INFO: get decay diagram for h 
+Pass to numerical integration for computing the widths:
+INFO: More info in temporary files:
+    /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/tmpnCReIu/temp_decay/index.html 
+Results written to /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat
+[1;31mERROR: The width of particle 9000006 is too small for an s-channel resonance (1.52858e-12). If you have this particle in an s-channel, this is likely to create numerical instabilities . [0m
+[1;31mERROR: The width of particle 9000006 is too small for an s-channel resonance (1.52858e-12). If you have this particle in an s-channel, this is likely to create numerical instabilities . [0m
+Generating 10000 events with run name rr2.00e-05_mS5.00e+02_mT5.28e+02
+survey  rr2.00e-05_mS5.00e+02_mT5.28e+02 
+INFO: compile directory 
+[1;31mERROR: The width of particle 9000006 is too small for an s-channel resonance (1.52858e-12). If you have this particle in an s-channel, this is likely to create numerical instabilities . [0m
+compile Source Directory
+Using random number seed offset = 33
+INFO: Running Survey 
+Creating Jobs
+Working on SubProcesses
+INFO:     P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:  Idle: 0,  Running: 2,  Completed: 30 [ current time: 09h33 ] 
+INFO:  Idle: 0,  Running: 1,  Completed: 31 [  0.32s  ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 32 [  1.1s  ] 
+INFO: End survey 
+refine 10000
+Creating Jobs
+INFO: Refine results to 10000 
+INFO: Generating 10000.0 unweigthed events. 
+INFO: Effective Luminosity 8648285.26484 pb^-1 
+INFO: need to improve 11 channels 
+Current estimate of cross-section: 0.0013875583 +- 4.95203976263e-05
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+INFO:  Idle: 0,  Running: 19,  Completed: 0 [ current time: 09h33 ] 
+INFO:  Idle: 0,  Running: 18,  Completed: 1 [  2.2s  ] 
+INFO:  Idle: 0,  Running: 14,  Completed: 5 [  5.3s  ] 
+INFO:  Idle: 0,  Running: 7,  Completed: 12 [  10.5s  ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 19 [  11.7s  ] 
+INFO: Combining runs 
+INFO: finish refine 
+refine 10000
+Creating Jobs
+INFO: Refine results to 10000 
+INFO: Generating 10000.0 unweigthed events. 
+INFO: Effective Luminosity 8422504.25758 pb^-1 
+INFO: need to improve 0 channels 
+Current estimate of cross-section: 0.0014247544 +- 4.13075533679e-06
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+INFO:  Idle: 0,  Running: 0,  Completed: 0 [ current time: 09h34 ] 
+INFO: Combining runs 
+INFO: finish refine 
+INFO: Combining Events 
+  === Results Summary for run: rr2.00e-05_mS5.00e+02_mT5.28e+02 tag: tag_1 ===
+
+     Cross-section :   0.001425 +- 4.131e-06 pb
+     Nb of events :  10000
+ 
+store_events
+INFO: Storing parton level results 
+INFO: End Parton 
+reweight -from_cards
+decay_events -from_cards
+INFO: [92mRunning MadAnalysis5 [arXiv:1206.1599][0m 
+INFO: Parton input file considered: 
+INFO:   --> /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Events/rr2.00e-05_mS5.00e+02_mT5.28e+02/unweighted_events.lhe.gz 
+[1;32mINFO: MadAnalysis5 now running the 'test_analysis_manual' analysis... [0m
+INFO: Follow Madanalysis5 run with the following command in a separate terminal: 
+INFO:   tail -f /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Events/rr2.00e-05_mS5.00e+02_mT5.28e+02/tag_1_MA5_test_analysis_manual.log 
+INFO: MadAnalysis5 successfully completed the analysis 'test_analysis_manual'. Reported results are placed in: 
+INFO:   --> /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Events/rr2.00e-05_mS5.00e+02_mT5.28e+02/tag_1_MA5_parton_analysis_test_analysis_manual.pdf 
+INFO: Finished MA5 analyses. 
+INFO: storing files of previous run 
+INFO: Done 
+quit
+INFO:  
+************************************************************
+*                                                          *
+*                      W E L C O M E to                    *
+*             M A D G R A P H 5 _ a M C @ N L O            *
+*                      M A D E V E N T                     *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 2.6.4                 20xx-xx-xx         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*                                                          *
+************************************************************
+INFO: load configuration from /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/me5_configuration.txt  
+INFO: load configuration from /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/input/mg5_configuration.txt  
+INFO: load configuration from /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/me5_configuration.txt  
+Using default text editor "vi". Set another one in ./input/mg5_configuration.txt
+Using default eps viewer "evince". Set another one in ./input/mg5_configuration.txt
+Using default web browser "firefox". Set another one in ./input/mg5_configuration.txt
+generate_events -f rr3.00e-05_mS2.07e+02_mT2.27e+02
+stty: Standardeingabe: Unpassender IOCTL (I/O-Control) für das Gerät
+INFO: Computing the width set on auto in the param_card.dat 
+INFO: Change particles name to pass to MG5 convention 
+************************************************************
+*                                                          *
+*                     W E L C O M E to                     *
+*              M A D G R A P H 5 _ a M C @ N L O           *
+*                                                          *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 2.6.4                 2018-11-09         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+*                            and                           *
+*            http://amcatnlo.web.cern.ch/amcatnlo/         *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*           Type 'tutorial' to learn how MG5 works         *
+*    Type 'tutorial aMCatNLO' to learn how aMC@NLO works   *
+*    Type 'tutorial MadLoop' to learn how MadLoop works    *
+*                                                          *
+************************************************************
+load MG5 configuration from ../input/mg5_configuration.txt 
+fastjet-config does not seem to correspond to a valid fastjet-config executable (v3+). We will use fjcore instead.
+ Please set the 'fastjet'variable to the full (absolute) /PATH/TO/fastjet-config (including fastjet-config).
+ MG5_aMC> set fastjet /PATH/TO/fastjet-config
+
+lhapdf-config does not seem to correspond to a valid lhapdf-config executable. 
+Please set the 'lhapdf' variable to the (absolute) /PATH/TO/lhapdf-config (including lhapdf-config).
+Note that you can still compile and run aMC@NLO with the built-in PDFs
+ MG5_aMC> set lhapdf /PATH/TO/lhapdf-config
+
+Using default text editor "vi". Set another one in ./input/mg5_configuration.txt
+Using default eps viewer "evince". Set another one in ./input/mg5_configuration.txt
+Using default web browser "firefox". Set another one in ./input/mg5_configuration.txt
+set automatic_html_opening False --no_save
+compute_widths 9000005 9000006 9000007 23 24 25 --precision_channel=0.01 --body_decay=4.0025 --path=/pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat --output=/pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat
+[1;34mPlease note that the automatic computation of the width is
+    only valid in narrow-width approximation and at tree-level.[0m
+INFO: Get two body decay from FeynRules formula 
+Results written to /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat
+INFO: get decay diagram for psil 
+Vertexlist of this model has not been searched.Automatically run the model.find_vertexlist()
+Found 4 stable particles
+INFO: get decay diagram for psih 
+INFO: get decay diagram for psimimus 
+[1;34mWARNING: Mass gap lower than pion mass for decay of 9000007 [0m
+[1;34mdecay into colored particle will be removed.[0m
+INFO: get decay diagram for z 
+INFO: get decay diagram for w+ 
+INFO: get decay diagram for h 
+Pass to numerical integration for computing the widths:
+INFO: More info in temporary files:
+    /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/tmpaSrE_A/temp_decay/index.html 
+Results written to /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat
+[1;31mERROR: The width of particle 9000006 is too small for an s-channel resonance (4.198389e-13). If you have this particle in an s-channel, this is likely to create numerical instabilities . [0m
+[1;31mERROR: The width of particle 9000006 is too small for an s-channel resonance (4.198389e-13). If you have this particle in an s-channel, this is likely to create numerical instabilities . [0m
+Generating 10000 events with run name rr3.00e-05_mS2.07e+02_mT2.27e+02
+survey  rr3.00e-05_mS2.07e+02_mT2.27e+02 
+INFO: compile directory 
+[1;31mERROR: The width of particle 9000006 is too small for an s-channel resonance (4.198389e-13). If you have this particle in an s-channel, this is likely to create numerical instabilities . [0m
+compile Source Directory
+Using random number seed offset = 42
+INFO: Running Survey 
+Creating Jobs
+Working on SubProcesses
+INFO:     P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:  Idle: 0,  Running: 2,  Completed: 30 [ current time: 09h36 ] 
+INFO:  Idle: 0,  Running: 1,  Completed: 31 [  0.33s  ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 32 [  1.2s  ] 
+INFO: End survey 
+refine 10000
+Creating Jobs
+INFO: Refine results to 10000 
+INFO: Generating 10000.0 unweigthed events. 
+INFO: Effective Luminosity 253731.598909 pb^-1 
+INFO: need to improve 14 channels 
+Current estimate of cross-section: 0.04729407 +- 0.00102269702016
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+INFO:  Idle: 2,  Running: 20,  Completed: 0 [ current time: 09h36 ] 
+INFO:  Idle: 1,  Running: 20,  Completed: 1 [  4s  ] 
+INFO:  Idle: 0,  Running: 7,  Completed: 15 [  9.1s  ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 22 [  19.6s  ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 22 [  19.6s  ] 
+INFO: Combining runs 
+INFO: finish refine 
+refine 10000
+Creating Jobs
+INFO: Refine results to 10000 
+INFO: Generating 10000.0 unweigthed events. 
+INFO: Effective Luminosity 240834.394844 pb^-1 
+INFO: need to improve 0 channels 
+Current estimate of cross-section: 0.04982677 +- 0.000141824967959
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+INFO:  Idle: 0,  Running: 0,  Completed: 0 [ current time: 09h37 ] 
+INFO: Combining runs 
+INFO: finish refine 
+INFO: Combining Events 
+  === Results Summary for run: rr3.00e-05_mS2.07e+02_mT2.27e+02 tag: tag_1 ===
+
+     Cross-section :   0.04983 +- 0.0001418 pb
+     Nb of events :  10000
+ 
+store_events
+INFO: Storing parton level results 
+INFO: End Parton 
+reweight -from_cards
+decay_events -from_cards
+INFO: [92mRunning MadAnalysis5 [arXiv:1206.1599][0m 
+INFO: Parton input file considered: 
+INFO:   --> /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Events/rr3.00e-05_mS2.07e+02_mT2.27e+02/unweighted_events.lhe.gz 
+[1;32mINFO: MadAnalysis5 now running the 'test_analysis_manual' analysis... [0m
+INFO: Follow Madanalysis5 run with the following command in a separate terminal: 
+INFO:   tail -f /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Events/rr3.00e-05_mS2.07e+02_mT2.27e+02/tag_1_MA5_test_analysis_manual.log 
+INFO: MadAnalysis5 successfully completed the analysis 'test_analysis_manual'. Reported results are placed in: 
+INFO:   --> /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Events/rr3.00e-05_mS2.07e+02_mT2.27e+02/tag_1_MA5_parton_analysis_test_analysis_manual.pdf 
+INFO: Finished MA5 analyses. 
+INFO: storing files of previous run 
+INFO: Done 
+quit
+INFO:  
+************************************************************
+*                                                          *
+*                      W E L C O M E to                    *
+*             M A D G R A P H 5 _ a M C @ N L O            *
+*                      M A D E V E N T                     *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 2.6.4                 20xx-xx-xx         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*                                                          *
+************************************************************
+INFO: load configuration from /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/me5_configuration.txt  
+INFO: load configuration from /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/input/mg5_configuration.txt  
+INFO: load configuration from /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/me5_configuration.txt  
+Using default text editor "vi". Set another one in ./input/mg5_configuration.txt
+Using default eps viewer "evince". Set another one in ./input/mg5_configuration.txt
+Using default web browser "firefox". Set another one in ./input/mg5_configuration.txt
+generate_events -f rr3.00e-05_mS5.00e+02_mT5.28e+02
+stty: Standardeingabe: Unpassender IOCTL (I/O-Control) für das Gerät
+INFO: Computing the width set on auto in the param_card.dat 
+INFO: Change particles name to pass to MG5 convention 
+************************************************************
+*                                                          *
+*                     W E L C O M E to                     *
+*              M A D G R A P H 5 _ a M C @ N L O           *
+*                                                          *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 2.6.4                 2018-11-09         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+*                            and                           *
+*            http://amcatnlo.web.cern.ch/amcatnlo/         *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*           Type 'tutorial' to learn how MG5 works         *
+*    Type 'tutorial aMCatNLO' to learn how aMC@NLO works   *
+*    Type 'tutorial MadLoop' to learn how MadLoop works    *
+*                                                          *
+************************************************************
+load MG5 configuration from ../input/mg5_configuration.txt 
+fastjet-config does not seem to correspond to a valid fastjet-config executable (v3+). We will use fjcore instead.
+ Please set the 'fastjet'variable to the full (absolute) /PATH/TO/fastjet-config (including fastjet-config).
+ MG5_aMC> set fastjet /PATH/TO/fastjet-config
+
+lhapdf-config does not seem to correspond to a valid lhapdf-config executable. 
+Please set the 'lhapdf' variable to the (absolute) /PATH/TO/lhapdf-config (including lhapdf-config).
+Note that you can still compile and run aMC@NLO with the built-in PDFs
+ MG5_aMC> set lhapdf /PATH/TO/lhapdf-config
+
+Using default text editor "vi". Set another one in ./input/mg5_configuration.txt
+Using default eps viewer "evince". Set another one in ./input/mg5_configuration.txt
+Using default web browser "firefox". Set another one in ./input/mg5_configuration.txt
+set automatic_html_opening False --no_save
+compute_widths 9000005 9000006 9000007 23 24 25 --precision_channel=0.01 --body_decay=4.0025 --path=/pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat --output=/pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat
+[1;34mPlease note that the automatic computation of the width is
+    only valid in narrow-width approximation and at tree-level.[0m
+INFO: Get two body decay from FeynRules formula 
+Results written to /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat
+INFO: get decay diagram for psil 
+Vertexlist of this model has not been searched.Automatically run the model.find_vertexlist()
+Found 4 stable particles
+INFO: get decay diagram for psih 
+INFO: get decay diagram for psimimus 
+INFO: get decay diagram for z 
+INFO: get decay diagram for w+ 
+INFO: get decay diagram for h 
+Pass to numerical integration for computing the widths:
+INFO: More info in temporary files:
+    /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/tmpq83ylk/temp_decay/index.html 
+Results written to /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat
+[1;31mERROR: The width of particle 9000006 is too small for an s-channel resonance (3.45994e-12). If you have this particle in an s-channel, this is likely to create numerical instabilities . [0m
+[1;31mERROR: The width of particle 9000006 is too small for an s-channel resonance (3.45994e-12). If you have this particle in an s-channel, this is likely to create numerical instabilities . [0m
+Generating 10000 events with run name rr3.00e-05_mS5.00e+02_mT5.28e+02
+survey  rr3.00e-05_mS5.00e+02_mT5.28e+02 
+INFO: compile directory 
+[1;31mERROR: The width of particle 9000006 is too small for an s-channel resonance (3.45994e-12). If you have this particle in an s-channel, this is likely to create numerical instabilities . [0m
+compile Source Directory
+Using random number seed offset = 51
+INFO: Running Survey 
+Creating Jobs
+Working on SubProcesses
+INFO:     P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:  Idle: 0,  Running: 2,  Completed: 30 [ current time: 09h39 ] 
+INFO:  Idle: 0,  Running: 1,  Completed: 31 [  0.33s  ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 32 [  1.1s  ] 
+INFO: End survey 
+refine 10000
+Creating Jobs
+INFO: Refine results to 10000 
+INFO: Generating 10000.0 unweigthed events. 
+INFO: Effective Luminosity 8570718.42619 pb^-1 
+INFO: need to improve 10 channels 
+Current estimate of cross-section: 0.001400116 +- 3.5449727574e-05
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+INFO:  Idle: 1,  Running: 17,  Completed: 0 [ current time: 09h39 ] 
+INFO:  Idle: 0,  Running: 17,  Completed: 1 [  2.8s  ] 
+INFO:  Idle: 0,  Running: 4,  Completed: 14 [  5.9s  ] 
+INFO:  Idle: 0,  Running: 3,  Completed: 15 [  9.4s  ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 18 [  19s  ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 18 [  19s  ] 
+INFO: Combining runs 
+INFO: finish refine 
+refine 10000
+Creating Jobs
+INFO: Refine results to 10000 
+INFO: Generating 10000.0 unweigthed events. 
+INFO: Effective Luminosity 8362678.20345 pb^-1 
+INFO: need to improve 0 channels 
+Current estimate of cross-section: 0.001434947 +- 4.96789101568e-06
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+INFO:  Idle: 0,  Running: 0,  Completed: 0 [ current time: 09h39 ] 
+INFO: Combining runs 
+INFO: finish refine 
+INFO: Combining Events 
+  === Results Summary for run: rr3.00e-05_mS5.00e+02_mT5.28e+02 tag: tag_1 ===
+
+     Cross-section :   0.001435 +- 4.968e-06 pb
+     Nb of events :  10000
+ 
+store_events
+INFO: Storing parton level results 
+INFO: End Parton 
+reweight -from_cards
+decay_events -from_cards
+INFO: [92mRunning MadAnalysis5 [arXiv:1206.1599][0m 
+INFO: Parton input file considered: 
+INFO:   --> /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Events/rr3.00e-05_mS5.00e+02_mT5.28e+02/unweighted_events.lhe.gz 
+[1;32mINFO: MadAnalysis5 now running the 'test_analysis_manual' analysis... [0m
+INFO: Follow Madanalysis5 run with the following command in a separate terminal: 
+INFO:   tail -f /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Events/rr3.00e-05_mS5.00e+02_mT5.28e+02/tag_1_MA5_test_analysis_manual.log 
+INFO: MadAnalysis5 successfully completed the analysis 'test_analysis_manual'. Reported results are placed in: 
+INFO:   --> /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Events/rr3.00e-05_mS5.00e+02_mT5.28e+02/tag_1_MA5_parton_analysis_test_analysis_manual.pdf 
+INFO: Finished MA5 analyses. 
+INFO: storing files of previous run 
+INFO: Done 
+quit
+INFO:  
+************************************************************
+*                                                          *
+*                      W E L C O M E to                    *
+*             M A D G R A P H 5 _ a M C @ N L O            *
+*                      M A D E V E N T                     *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 2.6.4                 20xx-xx-xx         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*                                                          *
+************************************************************
+INFO: load configuration from /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/me5_configuration.txt  
+INFO: load configuration from /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/input/mg5_configuration.txt  
+INFO: load configuration from /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/me5_configuration.txt  
+Using default text editor "vi". Set another one in ./input/mg5_configuration.txt
+Using default eps viewer "evince". Set another one in ./input/mg5_configuration.txt
+Using default web browser "firefox". Set another one in ./input/mg5_configuration.txt
+generate_events -f rr5.00e-05_mS2.06e+02_mT2.26e+02
+stty: Standardeingabe: Unpassender IOCTL (I/O-Control) für das Gerät
+INFO: Computing the width set on auto in the param_card.dat 
+INFO: Change particles name to pass to MG5 convention 
+************************************************************
+*                                                          *
+*                     W E L C O M E to                     *
+*              M A D G R A P H 5 _ a M C @ N L O           *
+*                                                          *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 2.6.4                 2018-11-09         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+*                            and                           *
+*            http://amcatnlo.web.cern.ch/amcatnlo/         *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*           Type 'tutorial' to learn how MG5 works         *
+*    Type 'tutorial aMCatNLO' to learn how aMC@NLO works   *
+*    Type 'tutorial MadLoop' to learn how MadLoop works    *
+*                                                          *
+************************************************************
+load MG5 configuration from ../input/mg5_configuration.txt 
+fastjet-config does not seem to correspond to a valid fastjet-config executable (v3+). We will use fjcore instead.
+ Please set the 'fastjet'variable to the full (absolute) /PATH/TO/fastjet-config (including fastjet-config).
+ MG5_aMC> set fastjet /PATH/TO/fastjet-config
+
+lhapdf-config does not seem to correspond to a valid lhapdf-config executable. 
+Please set the 'lhapdf' variable to the (absolute) /PATH/TO/lhapdf-config (including lhapdf-config).
+Note that you can still compile and run aMC@NLO with the built-in PDFs
+ MG5_aMC> set lhapdf /PATH/TO/lhapdf-config
+
+Using default text editor "vi". Set another one in ./input/mg5_configuration.txt
+Using default eps viewer "evince". Set another one in ./input/mg5_configuration.txt
+Using default web browser "firefox". Set another one in ./input/mg5_configuration.txt
+set automatic_html_opening False --no_save
+compute_widths 9000005 9000006 9000007 23 24 25 --precision_channel=0.01 --body_decay=4.0025 --path=/pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat --output=/pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat
+[1;34mPlease note that the automatic computation of the width is
+    only valid in narrow-width approximation and at tree-level.[0m
+INFO: Get two body decay from FeynRules formula 
+Results written to /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat
+INFO: get decay diagram for psil 
+Vertexlist of this model has not been searched.Automatically run the model.find_vertexlist()
+Found 4 stable particles
+INFO: get decay diagram for psih 
+[1;34mWARNING: Mass gap lower than pion mass for decay of 9000006 [0m
+[1;34mdecay into colored particle will be removed.[0m
+[1;34mWARNING: Mass gap lower than pion mass for decay of 9000006 [0m
+[1;34mdecay into colored particle will be removed.[0m
+INFO: get decay diagram for psimimus 
+INFO: get decay diagram for z 
+INFO: get decay diagram for w+ 
+INFO: get decay diagram for h 
+Pass to numerical integration for computing the widths:
+INFO: More info in temporary files:
+    /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/tmpvFPOHC/temp_decay/index.html 
+Results written to /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat
+[1;31mERROR: The width of particle 9000006 is too small for an s-channel resonance (1.238245e-12). If you have this particle in an s-channel, this is likely to create numerical instabilities . [0m
+[1;31mERROR: The width of particle 9000006 is too small for an s-channel resonance (1.238245e-12). If you have this particle in an s-channel, this is likely to create numerical instabilities . [0m
+Generating 10000 events with run name rr5.00e-05_mS2.06e+02_mT2.26e+02
+survey  rr5.00e-05_mS2.06e+02_mT2.26e+02 
+INFO: compile directory 
+[1;31mERROR: The width of particle 9000006 is too small for an s-channel resonance (1.238245e-12). If you have this particle in an s-channel, this is likely to create numerical instabilities . [0m
+compile Source Directory
+Using random number seed offset = 60
+INFO: Running Survey 
+Creating Jobs
+Working on SubProcesses
+INFO:     P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:  Idle: 0,  Running: 2,  Completed: 30 [ current time: 09h42 ] 
+INFO:  Idle: 0,  Running: 1,  Completed: 31 [  0.33s  ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 32 [  1.1s  ] 
+INFO: End survey 
+refine 10000
+Creating Jobs
+INFO: Refine results to 10000 
+INFO: Generating 10000.0 unweigthed events. 
+INFO: Effective Luminosity 248707.24049 pb^-1 
+INFO: need to improve 13 channels 
+Current estimate of cross-section: 0.0482495 +- 0.00152932314877
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+INFO:  Idle: 0,  Running: 7,  Completed: 14 [ current time: 09h42 ] 
+INFO:  Idle: 0,  Running: 6,  Completed: 15 [  0.071s  ] 
+INFO:  Idle: 0,  Running: 2,  Completed: 19 [  3.9s  ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 21 [  13.6s  ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 21 [  13.6s  ] 
+INFO: Combining runs 
+INFO: finish refine 
+refine 10000
+Creating Jobs
+INFO: Refine results to 10000 
+INFO: Generating 10000.0 unweigthed events. 
+INFO: Effective Luminosity 238877.467007 pb^-1 
+INFO: need to improve 0 channels 
+Current estimate of cross-section: 0.05023496 +- 0.000206608011413
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+INFO:  Idle: 0,  Running: 0,  Completed: 0 [ current time: 09h42 ] 
+INFO: Combining runs 
+INFO: finish refine 
+INFO: Combining Events 
+  === Results Summary for run: rr5.00e-05_mS2.06e+02_mT2.26e+02 tag: tag_1 ===
+
+     Cross-section :   0.05023 +- 0.0002066 pb
+     Nb of events :  10000
+ 
+store_events
+INFO: Storing parton level results 
+INFO: End Parton 
+reweight -from_cards
+decay_events -from_cards
+INFO: [92mRunning MadAnalysis5 [arXiv:1206.1599][0m 
+INFO: Parton input file considered: 
+INFO:   --> /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Events/rr5.00e-05_mS2.06e+02_mT2.26e+02/unweighted_events.lhe.gz 
+[1;32mINFO: MadAnalysis5 now running the 'test_analysis_manual' analysis... [0m
+INFO: Follow Madanalysis5 run with the following command in a separate terminal: 
+INFO:   tail -f /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Events/rr5.00e-05_mS2.06e+02_mT2.26e+02/tag_1_MA5_test_analysis_manual.log 
+INFO: MadAnalysis5 successfully completed the analysis 'test_analysis_manual'. Reported results are placed in: 
+INFO:   --> /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Events/rr5.00e-05_mS2.06e+02_mT2.26e+02/tag_1_MA5_parton_analysis_test_analysis_manual.pdf 
+INFO: Finished MA5 analyses. 
+INFO: storing files of previous run 
+INFO: Done 
+quit
+INFO:  
+************************************************************
+*                                                          *
+*                      W E L C O M E to                    *
+*             M A D G R A P H 5 _ a M C @ N L O            *
+*                      M A D E V E N T                     *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 2.6.4                 20xx-xx-xx         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*                                                          *
+************************************************************
+INFO: load configuration from /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/me5_configuration.txt  
+INFO: load configuration from /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/input/mg5_configuration.txt  
+INFO: load configuration from /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/me5_configuration.txt  
+Using default text editor "vi". Set another one in ./input/mg5_configuration.txt
+Using default eps viewer "evince". Set another one in ./input/mg5_configuration.txt
+Using default web browser "firefox". Set another one in ./input/mg5_configuration.txt
+generate_events -f rr5.00e-05_mS5.00e+02_mT5.28e+02
+stty: Standardeingabe: Unpassender IOCTL (I/O-Control) für das Gerät
+INFO: Computing the width set on auto in the param_card.dat 
+INFO: Change particles name to pass to MG5 convention 
+************************************************************
+*                                                          *
+*                     W E L C O M E to                     *
+*              M A D G R A P H 5 _ a M C @ N L O           *
+*                                                          *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 2.6.4                 2018-11-09         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+*                            and                           *
+*            http://amcatnlo.web.cern.ch/amcatnlo/         *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*           Type 'tutorial' to learn how MG5 works         *
+*    Type 'tutorial aMCatNLO' to learn how aMC@NLO works   *
+*    Type 'tutorial MadLoop' to learn how MadLoop works    *
+*                                                          *
+************************************************************
+load MG5 configuration from ../input/mg5_configuration.txt 
+fastjet-config does not seem to correspond to a valid fastjet-config executable (v3+). We will use fjcore instead.
+ Please set the 'fastjet'variable to the full (absolute) /PATH/TO/fastjet-config (including fastjet-config).
+ MG5_aMC> set fastjet /PATH/TO/fastjet-config
+
+lhapdf-config does not seem to correspond to a valid lhapdf-config executable. 
+Please set the 'lhapdf' variable to the (absolute) /PATH/TO/lhapdf-config (including lhapdf-config).
+Note that you can still compile and run aMC@NLO with the built-in PDFs
+ MG5_aMC> set lhapdf /PATH/TO/lhapdf-config
+
+Using default text editor "vi". Set another one in ./input/mg5_configuration.txt
+Using default eps viewer "evince". Set another one in ./input/mg5_configuration.txt
+Using default web browser "firefox". Set another one in ./input/mg5_configuration.txt
+set automatic_html_opening False --no_save
+compute_widths 9000005 9000006 9000007 23 24 25 --precision_channel=0.01 --body_decay=4.0025 --path=/pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat --output=/pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat
+[1;34mPlease note that the automatic computation of the width is
+    only valid in narrow-width approximation and at tree-level.[0m
+INFO: Get two body decay from FeynRules formula 
+Results written to /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat
+INFO: get decay diagram for psil 
+Vertexlist of this model has not been searched.Automatically run the model.find_vertexlist()
+Found 4 stable particles
+INFO: get decay diagram for psih 
+[1;34mWARNING: Mass gap lower than pion mass for decay of 9000006 [0m
+[1;34mdecay into colored particle will be removed.[0m
+[1;34mWARNING: Mass gap lower than pion mass for decay of 9000006 [0m
+[1;34mdecay into colored particle will be removed.[0m
+INFO: get decay diagram for psimimus 
+INFO: get decay diagram for z 
+INFO: get decay diagram for w+ 
+INFO: get decay diagram for h 
+Pass to numerical integration for computing the widths:
+INFO: More info in temporary files:
+    /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/tmpkM9LOm/temp_decay/index.html 
+Results written to /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat
+[1;31mERROR: The width of particle 9000006 is too small for an s-channel resonance (9.87839e-12). If you have this particle in an s-channel, this is likely to create numerical instabilities . [0m
+[1;31mERROR: The width of particle 9000006 is too small for an s-channel resonance (9.87839e-12). If you have this particle in an s-channel, this is likely to create numerical instabilities . [0m
+Generating 10000 events with run name rr5.00e-05_mS5.00e+02_mT5.28e+02
+survey  rr5.00e-05_mS5.00e+02_mT5.28e+02 
+INFO: compile directory 
+[1;31mERROR: The width of particle 9000006 is too small for an s-channel resonance (9.87839e-12). If you have this particle in an s-channel, this is likely to create numerical instabilities . [0m
+compile Source Directory
+Using random number seed offset = 69
+INFO: Running Survey 
+Creating Jobs
+Working on SubProcesses
+INFO:     P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:  Idle: 0,  Running: 2,  Completed: 30 [ current time: 09h44 ] 
+INFO:  Idle: 0,  Running: 1,  Completed: 31 [  0.33s  ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 32 [  1.2s  ] 
+INFO: End survey 
+refine 10000
+Creating Jobs
+INFO: Refine results to 10000 
+INFO: Generating 10000.0 unweigthed events. 
+INFO: Effective Luminosity 9149924.02132 pb^-1 
+INFO: need to improve 11 channels 
+Current estimate of cross-section: 0.0013114863 +- 4.14799195178e-05
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+INFO:  Idle: 0,  Running: 18,  Completed: 0 [ current time: 09h45 ] 
+INFO:  Idle: 0,  Running: 17,  Completed: 1 [  1.5s  ] 
+INFO:  Idle: 0,  Running: 13,  Completed: 5 [  4.9s  ] 
+INFO:  Idle: 0,  Running: 3,  Completed: 15 [  9.6s  ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 18 [  4m 3s  ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 18 [  4m 3s  ] 
+INFO: Combining runs 
+INFO: finish refine 
+refine 10000
+Creating Jobs
+INFO: Refine results to 10000 
+INFO: Generating 10000.0 unweigthed events. 
+INFO: Effective Luminosity 8436284.71364 pb^-1 
+INFO: need to improve 0 channels 
+Current estimate of cross-section: 0.0014224271 +- 4.44107019477e-06
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+INFO:  Idle: 0,  Running: 0,  Completed: 0 [ current time: 09h49 ] 
+INFO: Combining runs 
+INFO: finish refine 
+INFO: Combining Events 
+  === Results Summary for run: rr5.00e-05_mS5.00e+02_mT5.28e+02 tag: tag_1 ===
+
+     Cross-section :   0.001422 +- 4.441e-06 pb
+     Nb of events :  10000
+ 
+store_events
+INFO: Storing parton level results 
+INFO: End Parton 
+reweight -from_cards
+decay_events -from_cards
+INFO: [92mRunning MadAnalysis5 [arXiv:1206.1599][0m 
+INFO: Parton input file considered: 
+INFO:   --> /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Events/rr5.00e-05_mS5.00e+02_mT5.28e+02/unweighted_events.lhe.gz 
+[1;32mINFO: MadAnalysis5 now running the 'test_analysis_manual' analysis... [0m
+INFO: Follow Madanalysis5 run with the following command in a separate terminal: 
+INFO:   tail -f /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Events/rr5.00e-05_mS5.00e+02_mT5.28e+02/tag_1_MA5_test_analysis_manual.log 
+INFO: MadAnalysis5 successfully completed the analysis 'test_analysis_manual'. Reported results are placed in: 
+INFO:   --> /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Events/rr5.00e-05_mS5.00e+02_mT5.28e+02/tag_1_MA5_parton_analysis_test_analysis_manual.pdf 
+INFO: Finished MA5 analyses. 
+INFO: storing files of previous run 
+INFO: Done 
+quit
+INFO:  
+************************************************************
+*                                                          *
+*                      W E L C O M E to                    *
+*             M A D G R A P H 5 _ a M C @ N L O            *
+*                      M A D E V E N T                     *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 2.6.4                 20xx-xx-xx         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*                                                          *
+************************************************************
+INFO: load configuration from /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/me5_configuration.txt  
+INFO: load configuration from /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/input/mg5_configuration.txt  
+INFO: load configuration from /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/me5_configuration.txt  
+Using default text editor "vi". Set another one in ./input/mg5_configuration.txt
+Using default eps viewer "evince". Set another one in ./input/mg5_configuration.txt
+Using default web browser "firefox". Set another one in ./input/mg5_configuration.txt
+generate_events -f rr1.00e-04_mS2.05e+02_mT2.25e+02
+stty: Standardeingabe: Unpassender IOCTL (I/O-Control) für das Gerät
+INFO: Computing the width set on auto in the param_card.dat 
+INFO: Change particles name to pass to MG5 convention 
+************************************************************
+*                                                          *
+*                     W E L C O M E to                     *
+*              M A D G R A P H 5 _ a M C @ N L O           *
+*                                                          *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 2.6.4                 2018-11-09         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+*                            and                           *
+*            http://amcatnlo.web.cern.ch/amcatnlo/         *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*           Type 'tutorial' to learn how MG5 works         *
+*    Type 'tutorial aMCatNLO' to learn how aMC@NLO works   *
+*    Type 'tutorial MadLoop' to learn how MadLoop works    *
+*                                                          *
+************************************************************
+load MG5 configuration from ../input/mg5_configuration.txt 
+fastjet-config does not seem to correspond to a valid fastjet-config executable (v3+). We will use fjcore instead.
+ Please set the 'fastjet'variable to the full (absolute) /PATH/TO/fastjet-config (including fastjet-config).
+ MG5_aMC> set fastjet /PATH/TO/fastjet-config
+
+lhapdf-config does not seem to correspond to a valid lhapdf-config executable. 
+Please set the 'lhapdf' variable to the (absolute) /PATH/TO/lhapdf-config (including lhapdf-config).
+Note that you can still compile and run aMC@NLO with the built-in PDFs
+ MG5_aMC> set lhapdf /PATH/TO/lhapdf-config
+
+Using default text editor "vi". Set another one in ./input/mg5_configuration.txt
+Using default eps viewer "evince". Set another one in ./input/mg5_configuration.txt
+Using default web browser "firefox". Set another one in ./input/mg5_configuration.txt
+set automatic_html_opening False --no_save
+compute_widths 9000005 9000006 9000007 23 24 25 --precision_channel=0.01 --body_decay=4.0025 --path=/pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat --output=/pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat
+[1;34mPlease note that the automatic computation of the width is
+    only valid in narrow-width approximation and at tree-level.[0m
+INFO: Get two body decay from FeynRules formula 
+Results written to /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat
+INFO: get decay diagram for psil 
+Vertexlist of this model has not been searched.Automatically run the model.find_vertexlist()
+Found 4 stable particles
+INFO: get decay diagram for psih 
+INFO: get decay diagram for psimimus 
+INFO: get decay diagram for z 
+INFO: get decay diagram for w+ 
+INFO: get decay diagram for h 
+Pass to numerical integration for computing the widths:
+INFO: More info in temporary files:
+    /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/tmp0GsljF/temp_decay/index.html 
+Results written to /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat
+[1;31mERROR: The width of particle 9000006 is too small for an s-channel resonance (1.067085e-11). If you have this particle in an s-channel, this is likely to create numerical instabilities . [0m
+[1;31mERROR: The width of particle 9000006 is too small for an s-channel resonance (1.067085e-11). If you have this particle in an s-channel, this is likely to create numerical instabilities . [0m
+Generating 10000 events with run name rr1.00e-04_mS2.05e+02_mT2.25e+02
+survey  rr1.00e-04_mS2.05e+02_mT2.25e+02 
+INFO: compile directory 
+[1;31mERROR: The width of particle 9000006 is too small for an s-channel resonance (1.067085e-11). If you have this particle in an s-channel, this is likely to create numerical instabilities . [0m
+compile Source Directory
+Using random number seed offset = 78
+INFO: Running Survey 
+Creating Jobs
+Working on SubProcesses
+INFO:     P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:  Idle: 0,  Running: 2,  Completed: 30 [ current time: 09h51 ] 
+INFO:  Idle: 0,  Running: 1,  Completed: 31 [  0.33s  ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 32 [  1.2s  ] 
+INFO: End survey 
+refine 10000
+Creating Jobs
+INFO: Refine results to 10000 
+INFO: Generating 10000.0 unweigthed events. 
+INFO: Effective Luminosity 245643.964866 pb^-1 
+INFO: need to improve 12 channels 
+Current estimate of cross-section: 0.04885119 +- 0.00127745811717
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+INFO:  Idle: 0,  Running: 13,  Completed: 7 [ current time: 09h51 ] 
+INFO:  Idle: 0,  Running: 12,  Completed: 8 [  0.082s  ] 
+INFO:  Idle: 0,  Running: 10,  Completed: 10 [  4.5s  ] 
+INFO:  Idle: 0,  Running: 1,  Completed: 19 [  10.3s  ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 20 [  16.8s  ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 20 [  16.8s  ] 
+INFO: Combining runs 
+INFO: finish refine 
+refine 10000
+Creating Jobs
+INFO: Refine results to 10000 
+INFO: Generating 10000.0 unweigthed events. 
+INFO: Effective Luminosity 233277.230159 pb^-1 
+INFO: need to improve 0 channels 
+Current estimate of cross-section: 0.05144094 +- 0.000158999643432
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+INFO:  Idle: 0,  Running: 0,  Completed: 0 [ current time: 09h52 ] 
+INFO: Combining runs 
+INFO: finish refine 
+INFO: Combining Events 
+  === Results Summary for run: rr1.00e-04_mS2.05e+02_mT2.25e+02 tag: tag_1 ===
+
+     Cross-section :   0.05144 +- 0.000159 pb
+     Nb of events :  10000
+ 
+store_events
+INFO: Storing parton level results 
+INFO: End Parton 
+reweight -from_cards
+decay_events -from_cards
+INFO: [92mRunning MadAnalysis5 [arXiv:1206.1599][0m 
+INFO: Parton input file considered: 
+INFO:   --> /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Events/rr1.00e-04_mS2.05e+02_mT2.25e+02/unweighted_events.lhe.gz 
+[1;32mINFO: MadAnalysis5 now running the 'test_analysis_manual' analysis... [0m
+INFO: Follow Madanalysis5 run with the following command in a separate terminal: 
+INFO:   tail -f /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Events/rr1.00e-04_mS2.05e+02_mT2.25e+02/tag_1_MA5_test_analysis_manual.log 
+INFO: MadAnalysis5 successfully completed the analysis 'test_analysis_manual'. Reported results are placed in: 
+INFO:   --> /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Events/rr1.00e-04_mS2.05e+02_mT2.25e+02/tag_1_MA5_parton_analysis_test_analysis_manual.pdf 
+INFO: Finished MA5 analyses. 
+INFO: storing files of previous run 
+INFO: Done 
+quit
+INFO:  
+************************************************************
+*                                                          *
+*                      W E L C O M E to                    *
+*             M A D G R A P H 5 _ a M C @ N L O            *
+*                      M A D E V E N T                     *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 2.6.4                 20xx-xx-xx         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*                                                          *
+************************************************************
+INFO: load configuration from /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/me5_configuration.txt  
+INFO: load configuration from /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/input/mg5_configuration.txt  
+INFO: load configuration from /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/me5_configuration.txt  
+Using default text editor "vi". Set another one in ./input/mg5_configuration.txt
+Using default eps viewer "evince". Set another one in ./input/mg5_configuration.txt
+Using default web browser "firefox". Set another one in ./input/mg5_configuration.txt
+generate_events -f rr1.00e-04_mS5.00e+02_mT5.28e+02
+stty: Standardeingabe: Unpassender IOCTL (I/O-Control) für das Gerät
+INFO: Computing the width set on auto in the param_card.dat 
+INFO: Change particles name to pass to MG5 convention 
+************************************************************
+*                                                          *
+*                     W E L C O M E to                     *
+*              M A D G R A P H 5 _ a M C @ N L O           *
+*                                                          *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 2.6.4                 2018-11-09         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+*                            and                           *
+*            http://amcatnlo.web.cern.ch/amcatnlo/         *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*           Type 'tutorial' to learn how MG5 works         *
+*    Type 'tutorial aMCatNLO' to learn how aMC@NLO works   *
+*    Type 'tutorial MadLoop' to learn how MadLoop works    *
+*                                                          *
+************************************************************
+load MG5 configuration from ../input/mg5_configuration.txt 
+fastjet-config does not seem to correspond to a valid fastjet-config executable (v3+). We will use fjcore instead.
+ Please set the 'fastjet'variable to the full (absolute) /PATH/TO/fastjet-config (including fastjet-config).
+ MG5_aMC> set fastjet /PATH/TO/fastjet-config
+
+lhapdf-config does not seem to correspond to a valid lhapdf-config executable. 
+Please set the 'lhapdf' variable to the (absolute) /PATH/TO/lhapdf-config (including lhapdf-config).
+Note that you can still compile and run aMC@NLO with the built-in PDFs
+ MG5_aMC> set lhapdf /PATH/TO/lhapdf-config
+
+Using default text editor "vi". Set another one in ./input/mg5_configuration.txt
+Using default eps viewer "evince". Set another one in ./input/mg5_configuration.txt
+Using default web browser "firefox". Set another one in ./input/mg5_configuration.txt
+set automatic_html_opening False --no_save
+compute_widths 9000005 9000006 9000007 23 24 25 --precision_channel=0.01 --body_decay=4.0025 --path=/pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat --output=/pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat
+[1;34mPlease note that the automatic computation of the width is
+    only valid in narrow-width approximation and at tree-level.[0m
+INFO: Get two body decay from FeynRules formula 
+Results written to /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat
+INFO: get decay diagram for psil 
+Vertexlist of this model has not been searched.Automatically run the model.find_vertexlist()
+Found 4 stable particles
+INFO: get decay diagram for psih 
+INFO: get decay diagram for psimimus 
+INFO: get decay diagram for z 
+INFO: get decay diagram for w+ 
+INFO: get decay diagram for h 
+Pass to numerical integration for computing the widths:
+INFO: More info in temporary files:
+    /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/tmpnGhN2l/temp_decay/index.html 
+Results written to /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Cards/param_card.dat
+[1;31mERROR: The width of particle 9000006 is too small for an s-channel resonance (4.531913e-11). If you have this particle in an s-channel, this is likely to create numerical instabilities . [0m
+[1;31mERROR: The width of particle 9000006 is too small for an s-channel resonance (4.531913e-11). If you have this particle in an s-channel, this is likely to create numerical instabilities . [0m
+Generating 10000 events with run name rr1.00e-04_mS5.00e+02_mT5.28e+02
+survey  rr1.00e-04_mS5.00e+02_mT5.28e+02 
+INFO: compile directory 
+[1;31mERROR: The width of particle 9000006 is too small for an s-channel resonance (4.531913e-11). If you have this particle in an s-channel, this is likely to create numerical instabilities . [0m
+compile Source Directory
+Using random number seed offset = 87
+INFO: Running Survey 
+Creating Jobs
+Working on SubProcesses
+INFO:     P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl  
+INFO:     P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl  
+INFO:  Idle: 0,  Running: 3,  Completed: 29 [ current time: 09h54 ] 
+INFO:  Idle: 0,  Running: 2,  Completed: 30 [  0.33s  ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 32 [  1.2s  ] 
+INFO: End survey 
+refine 10000
+Creating Jobs
+INFO: Refine results to 10000 
+INFO: Generating 10000.0 unweigthed events. 
+INFO: Effective Luminosity 8649375.50788 pb^-1 
+INFO: need to improve 13 channels 
+Current estimate of cross-section: 0.0013873834 +- 5.23726529969e-05
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+INFO:  Idle: 1,  Running: 20,  Completed: 0 [ current time: 09h54 ] 
+INFO:  Idle: 0,  Running: 20,  Completed: 1 [  2s  ] 
+INFO:  Idle: 0,  Running: 16,  Completed: 5 [  5.1s  ] 
+INFO:  Idle: 0,  Running: 3,  Completed: 18 [  10.2s  ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 21 [  20.3s  ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 21 [  20.3s  ] 
+INFO: Combining runs 
+INFO: finish refine 
+refine 10000
+Creating Jobs
+INFO: Refine results to 10000 
+INFO: Generating 10000.0 unweigthed events. 
+INFO: Effective Luminosity 8473936.53685 pb^-1 
+INFO: need to improve 0 channels 
+Current estimate of cross-section: 0.0014161069 +- 5.10377923483e-06
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_uux_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ccx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ddx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilepvl_psimimus_psilmumvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilemvl 
+    P1_ssx_psipluspsimimus_psiplus_psilmupvl_psimimus_psilmumvl 
+INFO:  Idle: 0,  Running: 0,  Completed: 0 [ current time: 09h54 ] 
+INFO: Combining runs 
+INFO: finish refine 
+INFO: Combining Events 
+  === Results Summary for run: rr1.00e-04_mS5.00e+02_mT5.28e+02 tag: tag_1 ===
+
+     Cross-section :   0.001416 +- 5.104e-06 pb
+     Nb of events :  10000
+ 
+store_events
+INFO: Storing parton level results 
+INFO: End Parton 
+reweight -from_cards
+decay_events -from_cards
+INFO: [92mRunning MadAnalysis5 [arXiv:1206.1599][0m 
+INFO: Parton input file considered: 
+INFO:   --> /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Events/rr1.00e-04_mS5.00e+02_mT5.28e+02/unweighted_events.lhe.gz 
+[1;32mINFO: MadAnalysis5 now running the 'test_analysis_manual' analysis... [0m
+INFO: Follow Madanalysis5 run with the following command in a separate terminal: 
+INFO:   tail -f /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Events/rr1.00e-04_mS5.00e+02_mT5.28e+02/tag_1_MA5_test_analysis_manual.log 
+INFO: MadAnalysis5 successfully completed the analysis 'test_analysis_manual'. Reported results are placed in: 
+INFO:   --> /pfs/work2/workspace/scratch/hd_ls194-mywork-0/llp/soft_LLP/MG5_aMC_v2_6_4/pp-Z-leptons_pseudo/Events/rr1.00e-04_mS5.00e+02_mT5.28e+02/tag_1_MA5_parton_analysis_test_analysis_manual.pdf 
+INFO: Finished MA5 analyses. 
+INFO: storing files of previous run 
+INFO: Done 
+quit
+INFO:  
+[[1.00e+00 2.06e+02 2.26e+02 2.00e-05]
+ [1.00e+00 5.00e+02 5.28e+02 2.00e-05]
+ [1.00e+00 2.07e+02 2.27e+02 3.00e-05]
+ [1.00e+00 5.00e+02 5.28e+02 3.00e-05]
+ [1.00e+00 2.06e+02 2.26e+02 5.00e-05]
+ [1.00e+00 5.00e+02 5.28e+02 5.00e-05]
+ [1.00e+00 2.05e+02 2.25e+02 1.00e-04]
+ [1.00e+00 5.00e+02 5.28e+02 1.00e-04]]
+----------------------------------------------------------------------
+i=0
+    1 2.0600e+02 # ms 
+
+    2 2.2600e+02 # mt 
+
+    3 2.0000e-05 # rr 
+
+generating events...
+----------------------------------------------------------------------
+i=1
+    1 5.0000e+02 # ms 
+
+    2 5.2800e+02 # mt 
+
+    3 2.0000e-05 # rr 
+
+generating events...
+----------------------------------------------------------------------
+i=2
+    1 2.0700e+02 # ms 
+
+    2 2.2700e+02 # mt 
+
+    3 3.0000e-05 # rr 
+
+generating events...
+----------------------------------------------------------------------
+i=3
+    1 5.0000e+02 # ms 
+
+    2 5.2800e+02 # mt 
+
+    3 3.0000e-05 # rr 
+
+generating events...
+----------------------------------------------------------------------
+i=4
+    1 2.0600e+02 # ms 
+
+    2 2.2600e+02 # mt 
+
+    3 5.0000e-05 # rr 
+
+generating events...
+----------------------------------------------------------------------
+i=5
+    1 5.0000e+02 # ms 
+
+    2 5.2800e+02 # mt 
+
+    3 5.0000e-05 # rr 
+
+generating events...
+----------------------------------------------------------------------
+i=6
+    1 2.0500e+02 # ms 
+
+    2 2.2500e+02 # mt 
+
+    3 1.0000e-04 # rr 
+
+generating events...
+----------------------------------------------------------------------
+i=7
+    1 5.0000e+02 # ms 
+
+    2 5.2800e+02 # mt 
+
+    3 1.0000e-04 # rr 
+
+generating events...
