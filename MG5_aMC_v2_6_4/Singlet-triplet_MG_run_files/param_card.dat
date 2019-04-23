@@ -24,7 +24,7 @@ Block ckmblock
 Block frblock 
     1 5.0000e+02 # ms 
     2 5.2800e+02 # mt 
-    3 1.0000e-04 # rr 
+    3 5.0000e-08 # rr 
 
 ###################################
 ## INFORMATION FOR MASS

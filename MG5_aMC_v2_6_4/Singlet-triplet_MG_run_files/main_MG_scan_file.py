@@ -5,6 +5,7 @@ from numpy import genfromtxt
 import subprocess
 import sys
 
+#running the script python main_MG_scan_file.py file_with_params scalar/pseudo
 # running script that generates the process (no need to use every time)
 '''
 print('generating process...')

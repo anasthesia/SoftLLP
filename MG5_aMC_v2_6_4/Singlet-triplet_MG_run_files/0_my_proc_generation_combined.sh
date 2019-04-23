@@ -3,7 +3,7 @@
 #No need to run afterwards
 
 # set the paths
-MGdir=~/mywork/llp/soft_LLP/MG5_aMC_v2_6_4
+MGdir=~/mywork/soft/MG5_aMC_v2_6_5/
 CARDdir=$MGdir/Singlet-triplet_MG_run_files
 
 # set proc card file
