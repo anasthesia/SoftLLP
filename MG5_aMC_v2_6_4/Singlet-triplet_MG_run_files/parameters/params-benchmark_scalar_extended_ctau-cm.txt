@@ -1,7 +1,7 @@
 # scalar model, ctau \sim 10-2 cm
 # mC [GeV] sigma[pb]
 114 0.68
-227
+227 0.005
 325 0.01
 442 
 528 0.001
