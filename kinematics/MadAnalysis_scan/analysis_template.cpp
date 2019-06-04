@@ -44,6 +44,7 @@ bool debug_distributions::Execute(SampleFormat& sample, const EventFormat& event
       return true;
   }
   */
+    vector<const MCParticleFormat*> listInvisible;
     //cout << "---------------NEW EVENT-------------------" << endl;
     //
     MAfloat32 __event_weight__ = 1.0;
@@ -53,9 +54,11 @@ bool debug_distributions::Execute(SampleFormat& sample, const EventFormat& event
     if (sample.mc()==0) cout << "zero weight" << endl;
     Manager()->InitializeForNewEvent(__event_weight__);
     
-    MCParticleFormat lplus, lminus, eplus, eminus, muplus, muminus, nu, psil;
+    MCParticleFormat lplus, lminus, eplus, eminus, muplus, muminus, nu, nue, psil;
 
-    MALorentzVector pllus, plminus, pvisible;
+    MALorentzVector plplus, plminus, pvisible, peplus, peminus, pmuplus, pmuminus;
+    
+    ParticleBaseFormat plnu, pee, pmumu, pll;
 
     for (MAuint32 i=0;i<event.mc()->particles().size();i++)
     {
@@ -72,39 +75,58 @@ bool debug_distributions::Execute(SampleFormat& sample, const EventFormat& event
             lplus = *part;
             continue;
         }
+        /*
         if (part->pdgid() == 11) {
             eminus = *part;
-            continue;
+            //continue;
         }
         if (part->pdgid() == 13) {
             muminus = *part;
-            continue;
+            //continue;
         }
         if (part->pdgid() == -11) {
             eplus = *part;
-            continue;
+            //continue;
         }
         if (part->pdgid() == -13) {
             muplus = *part;
+            //continue;
+        }
+        */
+        if  ((part->pdgid() == 12)||(part->pdgid() == 14)) {
+            nu = *part;
             continue;
         }
-        if  ((part->pdgid() == 12)||(part->pdgid() == 14)) {
-            muplus = *part;
-            continue;
-        } 
+        /*
+        if  (part->pdgid() == 12) {     
+            nue = *part;
+            //continue;
+        }
+        */
         if (part->pdgid() == 9000005) {
             psil = *part;
+
             continue;    
 
     }
 
-    plplus=lplus.momentu();
+    //cout<<muplus<<endl;
+
+    plplus=lplus.momentum();
     plminus=lminus.momentum();
-    plvisible=plplus+plminus;
+    //peminus=eminus.momentum();
+    //pmuminus=muminus.momentum();
+    //peplus=eplus.momentum();
+    //pmuplus=muplus.momentum();
+    pvisible=plplus+plminus;
+    plnu=nu.momentum()+plplus;
+    pll=plplus+plminus;
+    //pmumu=pmuplus+pmuminus;
+
 
 // start here
 
-
+  }
   return true;
 }
 
