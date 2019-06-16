@@ -12,8 +12,12 @@ import sys
 homedir=os.environ.get("HOME")
 
 kinematics="""
-    ofstream f1("../Output/pTl_rr{a:.2e}_mS{b:.2e}_mT{c:.2e}.dat", fstream::app);
-    f1 << lplus.pt()<< endl;
+    ofstream f("../Output/pTlplus_rr{a:.2e}_mS{b:.2e}_mT{c:.2e}.dat", fstream::app);
+    f << lplus.pt()<< endl;
+    f.close();
+
+    ofstream f1("../Output/pTlminus_rr{a:.2e}_mS{b:.2e}_mT{c:.2e}.dat", fstream::app);
+    f1 << lminus.pt()<< endl;
     f1.close();
 
     ofstream f2("../Output/pTnu_rr{a:.2e}_mS{b:.2e}_mT{c:.2e}.dat", fstream::app); 
