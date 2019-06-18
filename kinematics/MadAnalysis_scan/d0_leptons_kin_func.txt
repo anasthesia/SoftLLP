@@ -1,0 +1,15 @@
+    ofstream f1("../Output_rec/d0-lplus_rr{a:.2e}_mS{b:.2e}_mT{c:.2e}.dat", fstream::app);
+    f1 << lplus.d0()<< endl;
+    f1.close();
+
+    ofstream f2("../Output_rec/d0-lminus_rr{a:.2e}_mS{b:.2e}_mT{c:.2e}.dat", fstream::app);
+    f2 << lminus.d0()<< endl;
+    f2.close();
+
+    ofstream f3("../Output_rec/pTlplus_rr{a:.2e}_mS{b:.2e}_mT{c:.2e}.dat", fstream::app);
+    f3 << lplus.pt()<< endl;
+    f3.close();
+
+    ofstream f4("../Output_rec/pTlminus_rr{a:.2e}_mS{b:.2e}_mT{c:.2e}.dat", fstream::app);
+    f4 << lminus.pt()<< endl;
+    f4.close();

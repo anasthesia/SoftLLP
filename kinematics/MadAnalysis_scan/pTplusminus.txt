@@ -1,0 +1,7 @@
+    ofstream f3("../Output/pTlplus_rr{a:.2e}_mS{b:.2e}_mT{c:.2e}.dat", fstream::app);
+    f3 << lplus.pt()<< endl;
+    f3.close();
+
+    ofstream f4("../Output/pTlminus_rr{a:.2e}_mS{b:.2e}_mT{c:.2e}.dat", fstream::app);
+    f4 << lminus.pt()<< endl;
+    f4.close();
