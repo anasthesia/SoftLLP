@@ -1,0 +1,230 @@
+\documentclass[10pt,letterpaper,notitlepage]{article}
+
+\usepackage{epsfig,amsmath,amssymb,cite,color,multirow,ulem,bm}
+
+\usepackage{graphicx,wasysym}
+\usepackage{hyperref}
+\usepackage{tabulary}
+
+\usepackage{pdfpages}
+\usepackage{xcolor}
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+\newcolumntype{K}[1]{>{\centering\arraybackslash}p{#1}}
+
+\makeatletter
+\newcommand{\thickhline}{%
+    \noalign {\ifnum 0=`}\fi \hrule height 1pt
+    \futurelet \reserved@a \@xhline
+}
+\newcolumntype{"}{@{\hskip\tabcolsep\vrule width 1pt\hskip\tabcolsep}}
+
+\newcommand{\listintertext}{\@ifstar\listintertext@\listintertext@@}
+\newcommand{\listintertext@}[1]{% \listintertext*{#1}
+  \hspace*{-\@totalleftmargin}#1}
+\newcommand{\listintertext@@}[1]{% \listintertext{#1}
+  \hspace{-\leftmargin}#1}
+\makeatother
+
+\oddsidemargin 0cm
+\evensidemargin 0cm
+\marginparwidth 68pt
+\marginparsep 10pt
+\topmargin 0cm
+\headheight 0pt
+\headsep 0pt
+\footskip 30pt
+\textheight 22cm
+\textwidth 16.5cm
+\columnsep 10pt
+\columnseprule 0pt
+
+\newcommand{\tev}{\,\, \mathrm{TeV}}
+\newcommand{\gev}{\,\, \mathrm{GeV}}
+\newcommand{\mev}{\,\, \mathrm{MeV}}
+
+
+
+\begin{document}
+
+\begin{center}
+\LARGE Two displaced leptons\\
+\Large Kinematics
+\end{center}
+
+\vspace{1.0cm}
+\begin{abstract}
+\vspace{0.2cm}\noindent
+This file contains kinematic properties of two displaced lepton signature in model \cite{Filimonova:2018qdc}.
+\end{abstract}
+
+%\tableofcontents
+
+\begin{figure}[H]
+\centering
+\includegraphics[height=0.4 \linewidth]{displaced-leptons.png}
+\caption{\label{fig:2displaced_diagram}New signature of two displaced soft leptons at the LHC.}
+\end{figure}
+
+
+Here I list some kinematic properties of the process displayed on Fig.\ref{fig:2displaced_diagram} for 3 benchmark points that give the correct relic abundance:
+
+\begin{itemize}
+  \item {\textbf BP \#1}: $m_l = 101 \text{ GeV},\ m_C = 114\text{ GeV}$
+  \item {\textbf BP \#3}: $m_l = 300 \text{ GeV},\ m_C = 324 \text{ GeV}$
+  \item {\textbf BP \#2}: $m_l = 500 \text{ GeV},\ m_C = 528 \text{ GeV}$
+\end{itemize} \label{benchmarks_scalar}
+
+ Then I vary the parameters around these points. If not said explicitly, I consider only the scalar scenario because the kinematics depends only on the mass splittings wich are almost the same for both scenarios (however, once we'll be taking into account also the lifetimes, we should take care of both scenarios separately):
+
+
+The corresponding kinematic distributions are plotted on Fig.\ref{fig:benchmark}, information about the cross sections and lifetimes can be found on Fig.\ref{fig:cross-lifetime}. After looking at the benchmarks, I no longer stick to the dark matter parameter point but explore the kinematics around it. The corresponding kinematic functions are plotted on Fig.\ref{fig:pT-MET},\ref{fig:pT-corr}, \ref{fig:sigma-pTcut}, \ref{fig:angles}, \ref{fig:inv-mass}. I also list some additional kinematic distributions that might be helpful for understanding the full kinematics: Fig.\ref{fig:additional-distr},  and some properties of the charged state: Fig.\ref{fig:charged-kin}.
+
+\begin{figure}[H]
+\centering
+
+\includegraphics[width=0.32 \linewidth]{histos/ptl_bencmark}
+\includegraphics[width=0.32 \linewidth]{histos/langle_benchmark}
+\includegraphics[width=0.32 \linewidth]{histos/dphi_benchmark}
+
+\caption{\label{fig:benchmark}from left to right: pT of leptons, the angle between them and the azimuthal angle for the benchmark points \ref{benchmarks_scalar}. }
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+
+\includegraphics[width=0.32 \textwidth]{histos/cross_sections_whole_and_charged}
+\includegraphics[width=0.32 \textwidth]{histos/Wino_production_cross_section_1712-00877}
+\includegraphics[width=0.32 \textwidth]{histos/Lifetime+Decay_rate_to_leptons}
+
+\caption{\label{fig:cross-lifetime}from left to right: cross section of the whole chain on Fig.\ref{fig:2displaced_diagram} and of the production of only the charged pair; production cross section of the wino pair (to compare with the orange line on the left plot) from \cite{Santoni:2017lcl}; lifetime and decay rate of the charged state. }
+\end{figure}
+
+
+
+
+\begin{figure}[H]
+\centering
+
+\includegraphics[width=0.45 \textwidth]{histos/ptl_different_splittings}
+\includegraphics[width=0.45 \textwidth]{histos/ptl_different_mC}
+\includegraphics[width=0.45 \textwidth]{histos/ptvisible_different_splittings}
+\includegraphics[width=0.45 \textwidth]{histos/ptvisible_different_mC}
+
+\caption{\label{fig:pT-MET}Upper left: transverse momentum of the lepton, lower left: of visible particles (= MET). Second column: same quantities but for the fixed mass splitting and differen masses of the charged state.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+
+\includegraphics[width=1 \textwidth]{histos/pT_correlation}
+
+\caption{\label{fig:pT-corr}Correlation of transverve momenta of leptons.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+
+\includegraphics[width=0.32 \textwidth]{histos/cross-section_drop_with_pTcut_mT324}
+\includegraphics[width=0.32 \textwidth]{histos/cross-section_drop_with_pTcut_mT120}
+\includegraphics[width=0.32 \textwidth]{histos/cross-section_drop_with_pTcut_Delta_fixed}
+
+\caption{\label{fig:sigma-pTcut}Cross section for different pT cuts. The left and the middle plots correspond to different fixed $m_C$, the right plot is for the fixed splitting and different $m_C$.}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+
+\includegraphics[width=0.45 \textwidth]{histos/langle_different_splittings}
+\includegraphics[width=0.45 \textwidth]{histos/langle_different_mC}
+
+\includegraphics[width=0.45 \textwidth]{histos/angle_lMET_different_splittings}
+\includegraphics[width=0.45 \textwidth]{histos/angle_lMET_different_mC}
+
+\includegraphics[width=0.45 \textwidth]{histos/azimuthal_angle_lMET_different_splittings}
+\includegraphics[width=0.45 \textwidth]{histos/azimuthal_angle_lMET_different_mC}
+
+
+\caption{\label{fig:angles}First row: 3D angle between leptons, second row: 3D angle between the charged lepton (one per event) and MET, third row: azimuthal angle between the charged lepton and MET. Left column: $m_C$ fixed and mass splitting varies, right column: the mass splitting is fixed, $m_C$ varies.}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\centering
+
+\includegraphics[width=0.45 \textwidth]{histos/m(ll)_different_splittings}
+\includegraphics[width=0.45 \textwidth]{histos/m(ll)_different_mC}
+
+\caption{\label{fig:inv-mass}Invariant mass of the two leptons for fixed $m_C$ and different splittings (left), for the fixed splitting and different $m_C$}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\centering
+
+\includegraphics[width=0.45 \textwidth]{histos/pt(chil)_different_mC}
+\includegraphics[width=0.45 \textwidth]{histos/pt(nu)_different_mC}
+
+\caption{\label{fig:additional-distr}Transverse momentum of the dark matter particle and of neutrino.}
+\end{figure}
+
+\begin{figure}[[H]]
+\centering
+
+\includegraphics[width=0.45 \textwidth]{histos/ptcharged_different_mC}
+\includegraphics[width=0.45 \textwidth]{histos/p_charged_different_mC}
+
+\includegraphics[width=0.45 \textwidth]{histos/eta_charged_different_mC}
+\includegraphics[width=0.45 \textwidth]{histos/y_charged_different_mC}
+
+\caption{\label{fig:charged-kin}First row: transverse and full momentum of the charged mediator, second row: rapidities of $m_C$.}
+\end{figure}
+
+\begin{thebibliography}{6}
+
+\bibitem{Filimonova:2018qdc}
+  A.~Filimonova and S.~Westhoff,
+  %``Long live the Higgs portal!,''
+  arXiv:1812.04628 [hep-ph].
+  %%CITATION = ARXIV:1812.04628;%%
+
+  \bibitem{Khachatryan:2014mea}
+    V.~Khachatryan {\it et al.} [CMS Collaboration],
+    %``Search for Displaced Supersymmetry in events with an electron and a muon with large impact parameters,''
+    Phys.\ Rev.\ Lett.\  {\bf 114}, no. 6, 061801 (2015)
+    doi:10.1103/PhysRevLett.114.061801
+    [arXiv:1409.4789 [hep-ex]].
+
+
+  \bibitem{CMS:2016isf}
+    CMS Collaboration [CMS Collaboration],
+    %``Search for displaced leptons in the e-mu channel,''
+    CMS-PAS-EXO-16-022.
+
+\bibitem{Sirunyan:2018iwl}
+  A.~M.~Sirunyan {\it et al.} [CMS Collaboration],
+  %``Search for new physics in events with two soft oppositely charged leptons and missing transverse momentum in proton-proton collisions at $\sqrt{s}=$ 13 TeV,''
+  Phys.\ Lett.\ B {\bf 782}, 440 (2018)
+  doi:10.1016/j.physletb.2018.05.062
+  [arXiv:1801.01846 [hep-ex]].
+
+  \bibitem{Santoni:2017lcl}
+    M.~Santoni,
+    %``Probing compressed mass spectra in electroweak supersymmetry with Recursive Jigsaw Reconstruction,''
+    JHEP {\bf 1805}, 058 (2018)
+    doi:10.1007/JHEP05(2018)058
+    [arXiv:1712.00877 [hep-ph]].
+    %%CITATION = doi:10.1007/JHEP05(2018)058;%%
+
+\end{thebibliography}
+
+\end{document}
