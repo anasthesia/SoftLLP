@@ -67,7 +67,7 @@ The production goes trough Z-boson, leading to a signature with two displaced le
 
 \item 2015 CMS $e-\mu$-search for the opposite sign leptons with large impact parameters $d_0= 0.02 - 2 \text{ cm}$, $\c \tau_{\tilde{t}}=10^{-2}-10^2 \text{ cm}$ \cite{Khachatryan:2014mea}: HF states with $\tau \simeq 0.05 \text{ cm/c}$ and $Z \rightarrow \tau \tau$ decays with $τ \simeq 0.0087 \text{ cm/c}$ (Fig. \ref{fig:CMS2015-bkg}).
 
-\begin{figure}[!h]
+\begin{figure}[H]
 \centering
 \includegraphics[height=3.0in]{CMS2015-bkg-e}
 \includegraphics[height=3.0in]{CMS2015-bkg-mu}
@@ -78,7 +78,7 @@ The production goes trough Z-boson, leading to a signature with two displaced le
 10 \text{ cm}$, $\c \tau_{\tilde{t}}=10^{-2}-10^2 \text{ cm}$ \cite{CMS:2016isf}: decays of τ leptons and B or D mesons
 with $c \tau_\tau \simeq 87 \text{ \mu m} ,\ c \tau_B \simeq 500 \text{ \mu m},\ c \tau_D \leq 100 \text{ \mu m}$ (Fig. \ref{fig:CMS2016-bkg}).
 
-\begin{figure}[!h]
+\begin{figure}[H]
 \centering
 \includegraphics[height=3.0in]{CMS2016-bkg-e}
 \includegraphics[height=3.0in]{CMS2016-bkg-mu}
@@ -91,10 +91,65 @@ such as $t\bar{t}W,\ t\bar{t}Z, WWW, ZZZ, WZZ$ and WWZ as well as processes incl
 
 \end{itemize}
 
-\begin{figure}[!h]
+\begin{figure}[H]
 \centering
 \includegraphics[height=3.0in]{displaced-leptons.png}
 \caption{\label{fig:2displaced_diagram}New signature of two displaced soft leptons at the LHC.}
+\end{figure}
+
+\subsection{Kinematics}
+
+Here I list some kinematic properties of the process considered for 3 benchmark points that give the correct relic abundance. I consider only the scalar scenario because the kinematics depends only on the mass splittings wich are almost the same for both scenarios (however, once we'll be taking into account also the lifetimes, we should take care of both scenarios separately):
+
+\begin{itemize}
+  \item {\textbf BP \#1}: $m_l = 101 \text{ GeV},\ m_C = 114\text{ GeV}$
+  \item {\textbf BP \#3}: $m_l = 300 \text{ GeV},\ m_C = 324 \text{ GeV}$
+  \item {\textbf BP \#2}: $m_l = 500 \text{ GeV},\ m_C = 528 \text{ GeV}$
+\end{itemize} \label{benchmarks_scalar}
+
+The corresponding kinematic distributions for an example case of two displaced muons are plotted on Fig.\ref{fig:pT-eta},\ref{fig:inv_mass-PT_miss}. The distributions are expected to be the same also for the one displaced and one prompt lepton in final state.
+
+\begin{figure}[H]
+\centering
+
+\includegraphics[height=1.4in]{figs/BP1_selection_0}
+\includegraphics[height=1.4in]{figs/BP2_selection_0}
+\includegraphics[height=1.4in]{figs/BP3_selection_0}
+
+\includegraphics[height=1.4in]{figs/BP1_selection_1}
+\includegraphics[height=1.4in]{figs/BP2_selection_1}
+\includegraphics[height=1.4in]{figs/BP3_selection_1}
+
+\includegraphics[height=1.4in]{figs/BP1_selection_4}
+\includegraphics[height=1.4in]{figs/BP2_selection_4}
+\includegraphics[height=1.4in]{figs/BP3_selection_4}
+
+\includegraphics[height=1.4in]{figs/BP1_selection_5}
+\includegraphics[height=1.4in]{figs/BP2_selection_5}
+\includegraphics[height=1.4in]{figs/BP3_selection_5}
+
+
+\caption{\label{fig:pT-eta} PT of leading muon (first row) and next-to-leading muon (second row); pseudorapidity of leading muon (third row) and next-to-leading muon (fourth row) for the benckmark point BP \#1,2,3 (from left to right). }
+\end{figure}
+
+\begin{figure}[H]
+\centering
+
+
+\includegraphics[height=1.4in]{figs/BP1_selection_10}
+\includegraphics[height=1.4in]{figs/BP2_selection_10}
+\includegraphics[height=1.4in]{figs/BP3_selection_10}
+
+\includegraphics[height=1.4in]{figs/BP1_selection_12}
+\includegraphics[height=1.4in]{figs/BP2_selection_12}
+\includegraphics[height=1.4in]{figs/BP3_selection_12}
+
+\includegraphics[height=1.4in]{figs/BP1_selection_15}
+\includegraphics[height=1.4in]{figs/BP2_selection_15}
+\includegraphics[height=1.4in]{figs/BP3_selection_15}
+
+
+\caption{\label{fig:inv_mass-PT_miss} Invariant mass of the two oppositely charged muons (first row), $\Delta R$ of two oppositely charged muons (second row), missing transverse momentum (third row) for the benckmark point BP \#1,2,3 (from left to right). }
 \end{figure}
 
 \section{One displaced and one prompt lepton}
@@ -107,7 +162,7 @@ Only non-symmetric processes:
   \item W+jets events (?)
 \end{itemize}
 
-\begin{figure}[!h]
+\begin{figure}[H]
 \centering
 \includegraphics[height=3.0in]{displaced+prompt-leptons.png}
 \caption{\label{fig:2displaced_diagram}New signature of one displaced and one prompt soft leptons at the LHC.}
