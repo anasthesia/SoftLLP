@@ -1,0 +1,145 @@
+\documentclass[12pt,letterpaper,notitlepage]{article}
+
+\usepackage{epsfig,amsmath,amssymb,cite,color,multirow,ulem,bm}
+
+\usepackage{graphicx,wasysym}
+\usepackage{hyperref}
+\usepackage{tabulary}
+
+\usepackage{pdfpages}
+\usepackage{xcolor}
+
+\newcolumntype{K}[1]{>{\centering\arraybackslash}p{#1}}
+
+\makeatletter
+\newcommand{\thickhline}{%
+    \noalign {\ifnum 0=`}\fi \hrule height 1pt
+    \futurelet \reserved@a \@xhline
+}
+\newcolumntype{"}{@{\hskip\tabcolsep\vrule width 1pt\hskip\tabcolsep}}
+
+\newcommand{\listintertext}{\@ifstar\listintertext@\listintertext@@}
+\newcommand{\listintertext@}[1]{% \listintertext*{#1}
+  \hspace*{-\@totalleftmargin}#1}
+\newcommand{\listintertext@@}[1]{% \listintertext{#1}
+  \hspace{-\leftmargin}#1}
+\makeatother
+
+\oddsidemargin 0cm
+\evensidemargin 0cm
+\marginparwidth 68pt
+\marginparsep 10pt
+\topmargin 0cm
+\headheight 0pt
+\headsep 0pt
+\footskip 30pt
+\textheight 22cm
+\textwidth 16.5cm
+\columnsep 10pt
+\columnseprule 0pt
+
+\newcommand{\tev}{\,\, \mathrm{TeV}}
+\newcommand{\gev}{\,\, \mathrm{GeV}}
+\newcommand{\mev}{\,\, \mathrm{MeV}}
+
+
+
+\begin{document}
+
+\begin{center}
+\LARGE Singlet-triplet fermion dark matter\\
+\Large LLP processes
+\end{center}
+
+\vspace{1.0cm}
+\begin{abstract}
+\vspace{0.2cm}\noindent
+This file contains an estimate of $d_0$ dependence on the model parameters. In particular, I try to see how does the impact parameter change if the mediators $\chi^\pm$ are boosted
+\end{abstract}
+
+\section{Analytical estimations}
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.6 \textwidth]{fig/d0}
+
+
+\caption{\label{fig:d0} Definition of quantities used.}
+\end{figure}
+
+Let us look at the mediator $\chi^+$ decaying to the charged lepton $l^+$ and missing energy in transverse plane (x,y): fig.(\ref{fig:d0}). Let $\chi^+$ have a transverse length of flight $\vec{r}_T$ and the transverse momentum of the outgoing lepton is $\vec(p)_T$. The transverse impact parameter in then calculated as:
+\begin{equation} \label{d0_init}
+  d_0=r_T\ \sin (\alpha) = l_{\chi^+} \sin(\theta^+) \sin (\alpha)
+\end{equation}
+where $l_{\chi^+}$ is the full time of flight of the mediator, $\theta^+$ is the angle between mediator's trajectory and beam axis z, and $\alpha$ is defined as:
+\begin{equation}
+  \cos (\alpha) = \frac{\vec{p}_T \vec{r}_T}{p_T r_T}
+\end{equation}
+
+Let us now have a look on how these quantities change if the mediator mass changes. In this case a different amount of energy goes to the kinetic energy which means that $\chi^+$ would be boosted. Let us assume that, in addition,it doesn't change it's initial direction (this is probably a quite strong assumption due to PDF effects resulting in boosts in z direction only but for the simplicity I will stick to it here). Then $r_T$ is simply boosted by a gamma-factor: $r_T'=\gamma_T r_T$ and we only need to take care of the angle $\alpha$.
+
+Let us project $\vec{p}_T$ to the $\vec{r}_T$ obtaining a parallel component $p_T^\parallel$ and a perpendicular one $p_T^\bot$. The latter doesn't change under the boost in $\vec{r}_T$ direction, but the parallel one is getting boosted:
+
+\begin{align}
+  &p_T^\bot '=p_T^\bot=p_T \sin(\alpha)\\
+  &p_T^\parallel '=\gamma_T(\beta_T E+p_T^\parallel)
+\end{align}
+
+where $E\simeq p$ is the energy of the lepton, all the prime components refer to the boosted system, and all the non-prime ones -- to the original system. The angle $\alpha$ then becomes ($p_T'=\sqrt{(p_T^\parallel)^2+(p_T^\bot)^2}=\sqrt{p_T^2 \sin^2(\alpha)+\gamma_T^2(\beta_T p+p_T \cos(\alpha))^2}$):
+
+\begin{equation}
+  \cos(\alpha')=\frac{\gamma_T r_T\ \gamma_T(\beta_T p+p_T^\parallel)}{\gamma_T r_T \sqrt{p_T^2 \sin^2(\alpha)+\gamma_T^2(\beta_T p+p_T \cos(\alpha))^2}}=\frac{\gamma_T(\beta_T p+p_T \cos(\alpha))}{\sqrt{p_T^2 \sin^2(\alpha)+\gamma_T^2(\beta_T p+p_T \cos(\alpha))^2}}
+\end{equation}
+
+Finally, we can use the relation $\beta_T=p_T/E\simeq p_T/p$ to simplify the above expression:
+\begin{equation} \label{alpha_boosted}
+  \cos(\alpha')=\frac{\gamma_T(1+\cos(\alpha))}{\sqrt{\sin^2(\alpha)+\gamma_T^2(1+ \cos(\alpha))^2}}
+\end{equation}
+
+and the impact parameter appears to be dependent on three parameters only:
+\begin{equation}\label{d0_boosted}
+  d_0'=r_T \sin(\alpha) \frac{\gamma_T}{\sqrt{\sin^2(\alpha)+\gamma_T(1+\cos(\alpha))^2}}= d_0 \frac{\gamma_T}{\sqrt{\sin^2(\alpha)+\gamma_T(1+\cos(\alpha))^2}}
+\end{equation}
+
+From eq.(\ref{d0_boosted}) and eq.(\ref{d0_init}) one can see that the value of $d_0$ depends on the initial kinematics ($\alpha,\ \sin(\theta^+)$), the boost factor of the charged mediator $\gamma_T$ (which is a function of $m_C$ only) and the lifetime $l_{\chi^+}$. The latter depends mostly on the coupling constant ($l_{\chi^+} \propto 1/\mu^2$) and the mass splitting $\Delta m_{lC}$ (which has one-to-one correspondence with the transverse momentum $p_T$), with a mild dependence on $m_C$.
+
+\section{Numerics}
+
+Using eq.(\ref{d0_init}), one can try and calculate expected $d_0$ for the particular parameter point, knowing the lifetime of the charged mediator:
+
+\begin{equation} \label{d0_lifetime}
+  d_0= \gamma_T\ c \tau_{\chi^+} \sin(\theta^+) \sin (\alpha)
+\end{equation}
+
+where $\gamma$ is a full boost factor of $\chi^+$ and parameters $\sin(\theta)=p_T(\chi^+)/p(\chi^+), \alpha$ can be found from simulations.
+
+Let us have a look at the typical of the relevant parameters for $m_C=324$: from fig.(\ref{fig:charged-kin}) one can deduce that $\sin(\theta) \simeq (100-250)/(250-500)=0.2-1$ and $\gamma_T=(1-\beta_T^2)^{-1/2}=(1-(p_T/E)^2)^{-1/2}$=1.01-1.26, from fig.(\ref{fig:alpha}) -- that $\sin \alpha \simeq \alpha \simeq 0-0.5$. This gives an estimation for the impact parameter $d_0 \simeq (0-0.63)c \tau_{\chi^+}$. For the coupling we used before ($\mu/v=9 \times 10^{-6}$), $c \tau = 0.1 \text{cm}$; for the new ones ($\mu/v=2 \times 10^{-6}$) - $c \tau = 2 \text{ cm}$. This means that \textbf{fot the largest lifetime possible in our scenario I expect that the the large fraction of event will be in the region of $d_0 \sim 1 \text{cm}$}.
+
+\begin{figure}
+\includegraphics[width=0.45 \textwidth]{histos/ptcharged_different_mC}
+\includegraphics[width=0.45 \textwidth]{histos/p_charged_different_mC}
+
+
+\caption{\label{fig:charged-kin}Transverse and full momentum of the charged mediator, second row: rapidities of $m_C$.}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\includegraphics[width=0.45 \textwidth]{histos/dphi-psiminus-lminus_different_mC.png}\\
+\includegraphics[width=0.45 \textwidth]{histos/dphi-psiminus-lminus_mC324_different_splittings.png}
+\includegraphics[width=0.45 \textwidth]{histos/dphi-psiminus-lminus_mC120_different_splittings.png}
+
+\caption{\label{fig:alpha}Values of $\alpha$ for a fixed mass splitting and various $m_C$, as well as for two fixed values of $m_C$ and various splittings.}
+\end{figure}
+
+\section{Dependence on model parameters}
+
+From eq.(\ref{d0_lifetime}) one deduce how does the impact parameter depend on the model parameters: $\gamma_T,\ \theta, \alpha$ depend only on $m_C$ (for the latter see fig.(\ref{fig:alpha})), and the lifetime is mostly dependent on the coupling and the mass splitting:
+
+\begin{equation}
+  c \tau \simeq \frac{v^4}{\mu \Delta m_{Cl}^3}
+\end{equation}
+
+\end{document}
