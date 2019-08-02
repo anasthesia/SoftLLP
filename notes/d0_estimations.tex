@@ -83,10 +83,10 @@ Let us project $\vec{p}_T$ to the $\vec{r}_T$ obtaining a parallel component $p_
 
 \begin{align}
   &p_T^\bot '=p_T^\bot=p_T \sin(\alpha)\\
-  &p_T^\parallel '=\gamma_T(\beta_T E+p_T^\parallel)
+  &p_T^\parallel '=\gamma_T(\beta_T E+p_T^\parallel)=\gamma_T(\beta_T p+p_T \cos(\alpha))
 \end{align}
 
-where $E\simeq p$ is the energy of the lepton, all the prime components refer to the boosted system, and all the non-prime ones -- to the original system. The angle $\alpha$ then becomes ($p_T'=\sqrt{(p_T^\parallel)^2+(p_T^\bot)^2}=\sqrt{p_T^2 \sin^2(\alpha)+\gamma_T^2(\beta_T p+p_T \cos(\alpha))^2}$):
+where $E\simeq p$ is the energy of the lepton, all the prime components refer to the boosted system, and all the non-prime ones -- to the original system. The angle $\alpha$ then becomes ($p_T'=\sqrt{(p_T^\parallel')^2+(p_T^\bot')^2}=\sqrt{p_T^2 \sin^2(\alpha)+\gamma_T^2(\beta_T p+p_T \cos(\alpha))^2}$):
 
 \begin{equation}
   \cos(\alpha')=\frac{\gamma_T r_T\ \gamma_T(\beta_T p+p_T^\parallel)}{\gamma_T r_T \sqrt{p_T^2 \sin^2(\alpha)+\gamma_T^2(\beta_T p+p_T \cos(\alpha))^2}}=\frac{\gamma_T(\beta_T p+p_T \cos(\alpha))}{\sqrt{p_T^2 \sin^2(\alpha)+\gamma_T^2(\beta_T p+p_T \cos(\alpha))^2}}
@@ -109,14 +109,15 @@ From eq.(\ref{d0_boosted}) and eq.(\ref{d0_init}) one can see that the value of 
 Using eq.(\ref{d0_init}), one can try and calculate expected $d_0$ for the particular parameter point, knowing the lifetime of the charged mediator:
 
 \begin{equation} \label{d0_lifetime}
-  d_0= \gamma_T\ c \tau_{\chi^+} \sin(\theta^+) \sin (\alpha)
+  d_0= \beta \gamma\ c \tau_{\chi^+} \sin(\theta^+) \sin (\alpha)
 \end{equation}
 
 where $\gamma$ is a full boost factor of $\chi^+$ and parameters $\sin(\theta)=p_T(\chi^+)/p(\chi^+), \alpha$ can be found from simulations.
 
-Let us have a look at the typical of the relevant parameters for $m_C=324$: from fig.(\ref{fig:charged-kin}) one can deduce that $\sin(\theta) \simeq (100-250)/(250-500)=0.2-1$ and $\gamma_T=(1-\beta_T^2)^{-1/2}=(1-(p_T/E)^2)^{-1/2}$=1.01-1.26, from fig.(\ref{fig:alpha}) -- that $\sin \alpha \simeq \alpha \simeq 0-0.5$. This gives an estimation for the impact parameter $d_0 \simeq (0-0.63)c \tau_{\chi^+}$. For the coupling we used before ($\mu/v=9 \times 10^{-6}$), $c \tau = 0.1 \text{cm}$; for the new ones ($\mu/v=2 \times 10^{-6}$) - $c \tau = 2 \text{ cm}$. This means that \textbf{fot the largest lifetime possible in our scenario I expect that the the large fraction of event will be in the region of $d_0 \sim 1 \text{cm}$}.
+Let us have a look at the typical of the relevant parameters for $m_C=324$: from fig.(\ref{fig:charged-kin}) one can deduce that $\sin(\theta) \simeq (100-250)/(250-500)=0.2-1$ and $\gamma=(1-\beta^2)^{-1/2}=(1-(p/E)^2)^{-1/2}=(1-(0.6-0.8)^2)^{-1/2}=1.2-1.7$ (so $\gamma \beta \sim 0.7-1.4$), from fig.(\ref{fig:alpha}) -- that $\sin \alpha \simeq \alpha \simeq 0-0.5$. This gives an estimation for the impact parameter $d_0 \simeq (0-0.7)c \tau_{\chi^+}$. For the coupling we used before ($\mu/v=9 \times 10^{-6}$), $c \tau = 0.1 \text{cm}$; for the new ones ($\mu/v=2 \times 10^{-6}$) - $c \tau = 2 \text{ cm}$. This means that for the largest lifetime possible in our scenario I expect that the the large fraction of event will be in the region of $d_0 \sim 1 \text{cm}$.
 
-\begin{figure}
+\begin{figure}[h!]
+\centering
 \includegraphics[width=0.45 \textwidth]{histos/ptcharged_different_mC}
 \includegraphics[width=0.45 \textwidth]{histos/p_charged_different_mC}
 
@@ -125,7 +126,7 @@ Let us have a look at the typical of the relevant parameters for $m_C=324$: from
 \end{figure}
 
 
-\begin{figure}
+\begin{figure}[h!]
 \centering
 \includegraphics[width=0.45 \textwidth]{histos/dphi-psiminus-lminus_different_mC.png}\\
 \includegraphics[width=0.45 \textwidth]{histos/dphi-psiminus-lminus_mC324_different_splittings.png}
@@ -134,12 +135,55 @@ Let us have a look at the typical of the relevant parameters for $m_C=324$: from
 \caption{\label{fig:alpha}Values of $\alpha$ for a fixed mass splitting and various $m_C$, as well as for two fixed values of $m_C$ and various splittings.}
 \end{figure}
 
+These calculations, however, do not take into account the Poisson statistics for the decaying particle. So, in reality, the probability that the particle with the lifetime $c \tau$ would travel the distance d, is
+
+\begin{equation} \label{Poisson}
+  P(d)=e^{-\frac{d}{\beta \gamma c \tau}}
+\end{equation}
+
+This results in the exponential suppression of number of events with large displacements.
+
+Let us now have a look at the numerical results for the "currently established benchmark point":
+{\textbf BP } $m_l = 304 \text{ GeV},\ m_C = 324\text{ GeV}, \mu/v=2 \times 10^{-6} (\text{or } rr=10^{-8} \text{ in the cards})$.
+ The relevant boost factors combination $\beta \gamma$ and the travel distance of $\chi_+$ are shown on fig.(\ref{fig:boost-distance}). Note that the second plot has logarithmic scales on both axes, so it has exactly the exponential shape discussed in \ref{Poisson}.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.45 \textwidth]{histos/betagamma_rr10-8}
+\includegraphics[width=0.45 \textwidth]{histos/distance_rr10-8}
+
+
+\caption{\label{fig:boost-distance}.Left: boost factors combination $\beta \gamma$, right: travel distance of $\chi_+$.}
+\end{figure}
+
+The impact parameter, calculated using HEPMC output generated by Pythia8 is shown on fig.(\ref{fig:d0}). The first plot has no pT cuts, and the difference between electrons and muons occurs due to the presence of large number of soft electrons originating from the primary vertex. This difference is gone once the cut of $pT=10 \text{ GeV}$ is applied, which can be seen on the second plot. The shape of the d0-histograms suffers from exactly the same suppression as discussed above.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.45 \textwidth]{histos/d0_ctau2cm}
+\includegraphics[width=0.45 \textwidth]{histos/d0_ctau2cm_pTcut}
+
+
+\caption{\label{fig:d0}.d0 of electrons and muons. Left: no pT cuts, right: $pT=10 \text{ GeV}$ cut is applied}
+\end{figure}
+
 \section{Dependence on model parameters}
 
 From eq.(\ref{d0_lifetime}) one deduce how does the impact parameter depend on the model parameters: $\gamma_T,\ \theta, \alpha$ depend only on $m_C$ (for the latter see fig.(\ref{fig:alpha})), and the lifetime is mostly dependent on the coupling and the mass splitting:
 
 \begin{equation}
-  c \tau \simeq \frac{v^4}{\mu \Delta m_{Cl}^3}
+  c \tau \simeq \frac{v^4}{\mu^2 \Delta m_{Cl}^3}
 \end{equation}
+
+This happens simply due to the change of $c \tau$, so if we changed the coupling constant such that the lifetime is $2 cm$ istead of $0.1 cm$ before, we expect the same change in $d0$: fig.(\ref{fig:d0-different-couplings}}). Unfortunately, there is not enough statistics on the second plot, so the value we get is true up to an order of magnitude.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.45 \textwidth]{histos/d0_ctau2cm}
+\includegraphics[width=0.45 \textwidth]{histos/d0l_ctau01}
+
+
+\caption{\label{fig:d0-different-couplings}.d0 of electrons and muons for different lifetimes.}
+\end{figure}
 
 \end{document}
