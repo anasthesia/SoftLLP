@@ -1,6 +1,6 @@
 # This file was automatically created by FeynRules 2.3.36
 # Mathematica version: 12.0.0 for Mac OS X x86 (64-bit) (April 7, 2019)
-# Date: Sat 28 Mar 2020 01:43:25
+# Date: Mon 30 Mar 2020 19:31:15
 
 
 from object_library import all_vertices, Vertex
@@ -58,7 +58,7 @@ V_8 = Vertex(name = 'V_8',
              couplings = {(1,1):C.GC_8,(0,0):C.GC_8,(2,2):C.GC_8})
 
 V_9 = Vertex(name = 'V_9',
-             particles = [ P.psimius, P.psiplus, P.a ],
+             particles = [ P.psiminus, P.psiplus, P.a ],
              color = [ '1' ],
              lorentz = [ L.FFV1 ],
              couplings = {(0,0):C.GC_3})
@@ -136,13 +136,13 @@ V_21 = Vertex(name = 'V_21',
               couplings = {(0,0):C.GC_4})
 
 V_22 = Vertex(name = 'V_22',
-              particles = [ P.psimius, P.psih, P.W__plus__ ],
+              particles = [ P.psiminus, P.psih, P.W__plus__ ],
               color = [ '1' ],
               lorentz = [ L.FFV1 ],
               couplings = {(0,0):C.GC_23})
 
 V_23 = Vertex(name = 'V_23',
-              particles = [ P.psimius, P.psil, P.W__plus__ ],
+              particles = [ P.psiminus, P.psil, P.W__plus__ ],
               color = [ '1' ],
               lorentz = [ L.FFV1 ],
               couplings = {(0,0):C.GC_26})
@@ -178,7 +178,7 @@ V_28 = Vertex(name = 'V_28',
               couplings = {(0,0):C.GC_11})
 
 V_29 = Vertex(name = 'V_29',
-              particles = [ P.psimius, P.psiplus, P.Z ],
+              particles = [ P.psiminus, P.psiplus, P.Z ],
               color = [ '1' ],
               lorentz = [ L.FFV1 ],
               couplings = {(0,0):C.GC_24})

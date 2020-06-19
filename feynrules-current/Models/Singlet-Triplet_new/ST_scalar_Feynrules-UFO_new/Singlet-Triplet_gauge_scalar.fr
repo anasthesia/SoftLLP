@@ -160,6 +160,6 @@ M$ClassesDescription = {
         PropagatorType  -> Straight,
         PropagatorArrow -> True,
         ParticleName    -> "psiplus",
-        AntiParticleName -> "psimius",
+        AntiParticleName -> "psiminus",
         FullName        -> "psiC"}
 };
